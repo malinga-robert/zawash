@@ -1,0 +1,37 @@
+doctype 
+html
+    head
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+        link(rel="stylesheet", href="/css/bootstrap-4.6.0-dist/css/bootstrap.css")
+        link(rel="stylesheet", href="../css/styles.css")
+        link(rel="stylesheet", href="/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css")
+        title= title
+    body
+        center
+            .Register
+                form.regform(action='/register' method='POST' name='register-form')
+                h1 Register Car Washer 
+                input#fullnames.form-control(type='text' name='fullnames' placeholder='Enter Your Fullnames')
+                br
+            .gender
+                label.form-label(for='gender') Gender:
+                input(type='radio' name='status' id='' value='male')
+                | Male
+                input(type='radio' name='status' id='' value='female')
+                | Female
+                br
+                input#dateofbirth.form-control(type='text' name='dateofbirth' placeholder='Date Of Birth' onclick="(this.type='Date')")
+                br
+                input#nationalID.form-control(type='text' name='nationalID' placeholder='NationalID NIN')
+                br
+            .residence
+                input#residence.form-control(type='text' name='residence' placeholder='Enter Place Of Residence')
+                br
+            .EmployeeID
+                p EmployeeID
+                input#employeeID.form-control(type='text' placeholder='Enter employeeID number' value='ZWASH-3-7-9' required='')
+                br
+                button.form-control.btn.btn-primary(type='button' name='register') register 
+              
+            
+            
