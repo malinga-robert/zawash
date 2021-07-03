@@ -1,21 +1,26 @@
 // Dependecies
 const express = require("express")
+const path = require('path');
+
 
 // instantiations
 const app = express()
+
 
 // settings or configurations
 app.set('view engine', 'pug');
 app.set('views', './views');
 
-// middle ware
+// middleware
 app.use(express.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 // routes
 app.get('/register',(req,res)=>{
     res.render('register_washer',{title:"Register Car Washer"})
 })
-app.post("/register",(req,res)=>{
+app.post('/register',(req,res)=>{
     console.log(req.body)
     res.send("The data has been submitted")
 })

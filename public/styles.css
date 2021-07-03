@@ -1,0 +1,64 @@
+p {
+    color: black;
+}
+
+td {
+    border-color: brown;
+    border-style: solid dashed ;
+}
+nav{
+    font-style: color white;
+}
+h5{
+    color: RED;
+
+}
+H1{
+    color: red;
+    font-size: 30px;
+    text-align: center;
+    font-style: normal; 
+}
+.login-form{
+    margin: 40px;
+    width: 60px;
+    padding-left: 70%;
+}
+.login{
+    border: 2px solid grey; 
+    width: 500px;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: white;
+}
+.login h1{
+    color: blue;
+    padding-bottom: 10px;
+}
+ .login-form p{
+color: lightskyblue;
+ }
+ .regform{
+border: 1px solid grey;
+border-radius: 10px;
+padding: 40px;
+margin: 50px;
+align-items: center;
+width: 400px;
+background-color: white;
+
+
+}
+.regform h1{
+color: blue;
+
+}
+
+
+.regform p{
+    text-align: left;
+}
+.gender{
+float: left;
+color: black;
+}
