@@ -1,15 +1,38 @@
-doctype 
-html
-    head
-        //- link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
-        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" )
-        
-        //- link(rel="stylesheet", href="/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css")
-        
-        link(rel="stylesheet", href="/styles.css", type="text/css")
+extends layout 
+block content
+    link(rel="stylesheet", href="/styles.css", type="text/css")
+    title= title
+    body   
+        nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
+        h2.navbar-brand.brand-name
+            a(href='index.html')
+            img.img-responsive2(src='/images/logo.png')
+        a.navbar-brand(href='index.html' style='color: white;')
+            strong ZAWASH
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.mr-auto
+            li.nav-item.active
+                a.nav-link(href='/index.html' style='color: white;')
+                | Home
+                span.sr-only (current)
+            //
+                <li class="nav-item">
+                <a class="nav-link" href="forms.html">forms</a>
+                </li>
+            //
+                <li class="nav-item">
+                <a class="nav-link" href="tables.html">tables</a>
+                </li>
+            .nav.navbar-nav.navbar-right
+            ul.nav.navbar-nav.navbar-right
+                li.nav-item
+                a.nav-link(href='/signin.html') Sign in
+                li.nav-item
+                a.nav-link(href='/register.html' style='color: white;') Register
 
-        title= title
-    body
+        
         center
             .Register
                 form.regform(action='/register' method='POST' name='register-form')

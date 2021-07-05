@@ -1,0 +1,157 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  title ZAWASH
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/styles.css')
+  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
+nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
+  h2.navbar-brand.brand-name
+    a(href='index.html')
+      img.img-responsive2(src='/images/logo.png')
+  a.navbar-brand(href='index.html')
+    strong ZAWASH
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        a.nav-link(href='#')
+          | Home
+          span.sr-only (current)
+      li.nav-item
+        a.nav-link(href='forms.html') forms
+      li.nav-item
+        a.nav-link(href='tables.html') tables
+    .nav.navbar-nav.navbar-right
+      ul.nav.navbar-nav.navbar-right
+        li.nav-item
+          a.nav-link(href='/signin.html') Sign in
+        li.nav-item
+          a.nav-link(href='/register.html') Register
+//
+  <div class="alert alert-primary" role="alert">
+  A simple primary alert—check it out!
+  </div>
+// image
+center
+  img(src='/images/car wash bay.jpg' alt='' width='800px' height='400px')
+.container
+  .jamboron.text-center
+    h1(style='font: bolder;')
+      strong ZAWASH OFFERS THE BEST CAR WASH PACKAGES AROUND TOWN 
+    p
+      | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos pariatur dolor cumque dolorem accusantium hic,
+      | tempora ducimus modi asperiores nobis eius magni sit officiis eum ut, ea aperiam! Pariatur, atque.
+.container
+  .row
+    .col-sm-6.col-md-4
+      .card(style='width: 18rem;')
+        img.card-img-top(src='/images/sports_car_vector_291850.jpg' alt='...')
+        .card-body
+          h5.card-title SMALL CAR
+          p.card-text
+            | Under this category cars are considered small depending on size click below for
+            | package details.
+          // Example split danger button
+          .btn-group
+            button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              span.sr-only Toggle Dropdown
+              |                   Details
+            .dropdown-menu
+              a.dropdown-item(href='#' style='color: red;') package details
+              p(style='color: blue;')
+                | Vehicles with a four sitter capacity such as saloon cars,
+                | are considered small cars and are charged ten thousand shillings(10,000shs)
+    .col-sm-6.col-md-4
+      .card(style='width: 18rem;')
+        img.card-img-top(src='/images/bajaj.jpg' alt='...')
+        .card-body
+          h5.card-title BODA-BODA
+          p.card-text
+            | under this category all motor bikes are considered boda-boba click below for package
+            | details.
+          // Example split danger button
+          .btn-group
+            button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              span.sr-only Toggle Dropdown
+              |                   Details
+            .dropdown-menu
+              a.dropdown-item(href='#' style='color: red;') Package details
+              p(style='color: blue;') The cost of washing motor bikes is five thousand shillings(5,000shs)
+              .dropdown-divider
+    .col-sm-6.col-md-4
+      .card(style='width: 18rem;')
+        img.card-img-top(src='/images/taxi.jpg' alt='...')
+        .card-body
+          h5.card-title MEDIUM CARS
+          p.card-text
+            | Under this category cars are considered medium size depending on sitter capacity,
+            | click below for package details..
+          // Example split danger button
+          .btn-group
+            button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              span.sr-only Toggle Dropdown
+              |                   Details
+            .dropdown-menu
+              a.dropdown-item(href='#' style='color: red;') Package details
+              p(style='color: blue;')
+                | Vehicles like taxi&apos;s,fuso are called medium sized and
+                | are charged fifteen thousand shillings(15,000shs)
+              .dropdown-divider
+    .container
+      .row
+        .col-sm-6.col-md-4
+          .card(style='width: 18rem;')
+            img.card-img-top(src='/images/engine.jpg' alt='...')
+            .card-body
+              h5.card-title ENGINE
+              p.card-text
+                | All vehicle engines are categorized in this section click below for package
+                | details.
+              // Example split danger button
+              .btn-group
+                button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                  span.sr-only Toggle Dropdown
+                  |                       Details
+                .dropdown-menu
+                  a.dropdown-item(href='#' style='color: red;') Package details
+                  p(style='color:blue;')
+                    | The cost of washing an engine irrespective
+                    | of car is ten thousand shillings(10,000)
+                  .dropdown-divider
+        .col-sm-6.col-md-4
+          img(src='/images/wash cartoon.jpg' alt='' width='350' height='300')
+        .col-sm-6.col-md-4
+          .card(style='width: 18rem;')
+            img.card-img-top(src='/images/full wash.jpg' alt='...')
+            .card-body
+              h5.card-title FULL WASH
+              p.card-text
+                | A full wash refers to cleaning a vehicle including internal machine parts,click
+                | below for package details.
+            .button
+              // Example single danger button
+              .btn-group
+                button.btn.btn-primary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                  | Details
+                .dropdown-menu
+                  a.dropdown-item(href='#' style='color: red;') Package details
+                  p(style='color: blue;') full wash for all vehicles costs twenty thousand shillings(20,000) 
+                  .dropdown-divider
+  .container
+    .row
+      .col-md-6
+        img(src='/images/washing team2.png' alt='' width='500' height='300')
+      .col-md-5
+        img(src='/images/wash1.png' alt='' width='500' height='300')
+  br
+  br
+  // Copyright
+  footer.bg-light.text-center.text-lg-start
+    .text-center.p-3(style='background-color: black;')
+      | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by Malinga Robert
+  script(src='css/jquery-3.6.0.js')
+  script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')

@@ -1,6 +1,8 @@
 // Dependecies
 const express = require("express")
 const path = require('path');
+const registerRoutes = require('./routes/registerRoutes');
+const signinRoutes = require('./routes/singninRoutes');
 
 
 // instantiations
@@ -17,13 +19,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // routes
-app.get('/register',(req,res)=>{
-    res.render('register_washer',{title:"Register Car Washer"})
-})
-app.post('/register',(req,res)=>{
-    console.log(req.body)
-    res.send("The data has been submitted")
-})
+//route for signin form
+app.use('/login', signinRoutes);
+//route for register form
+app.use('/register', registerRoutes);
 
 
 // handle non existing routes

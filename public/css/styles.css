@@ -17,14 +17,20 @@ H1{
     color: red;
     font-size: 30px;
     text-align: center;
-    font-style: normal; 
+    font-style: normal;
 }
 .login-form{
-    margin: 40px;
+    margin: 20px;
     width: 60px;
     padding-left: 70%;
+}   
+.Login-form {
+      border: 2px solid rgb(226, 226, 226);
+      padding: 40px 40px;
+      border-radius: 10px;
+      
 }
-
+  
 
 .login{
     border: 2px solid grey; 
@@ -53,6 +59,7 @@ background-color: white;
 }
 .regform h1{
 color: blue;
+padding-bottom: 15px;
 
 }
 
@@ -63,4 +70,13 @@ color: blue;
 .gender{
 float: left;
 color: black;
+}
+#name_error{
+    color: red;
+}
+#dateofbirth_error{
+    color: red;
+}
+#residence_error{
+    color: red;
 }
