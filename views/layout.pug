@@ -1,13 +1,33 @@
-doctype 
-html
-  head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    
-    link(rel='stylesheet' href='css/styles.css')
-    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
-    link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
-    link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
-    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  title ZAWASH
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/styles.css')
+  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
+// navbar
+nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
+  h2.navbar-brand.brand-name
+    a(href='index.html')
+      img.img-responsive2(src='/images/logo.png')
+  a.navbar-brand(href='index.html')
+    strong ZAWASH
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        a.nav-link(href='/index.html')
+          | Home
+          span.sr-only (current)
+    .nav.navbar-nav.navbar-right
+      ul.nav.navbar-nav.navbar-right
+        li.nav-item
+          a.nav-link(href='/carRegister.html') CarTracking 
+        li.nav-item
+          a.nav-link(href='/signin.html') Login
+        li.nav-item
+          a.nav-link(href='/register.html') Register
 block content    

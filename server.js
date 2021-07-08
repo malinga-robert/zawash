@@ -2,7 +2,8 @@
 const express = require("express")
 const path = require('path');
 const registerRoutes = require('./routes/registerRoutes');
-const signinRoutes = require('./routes/singninRoutes');
+const loginRoutes = require('./routes/loginRoutes');
+const homeRoutes = require('./routes/homeRoutes');
 
 
 // instantiations
@@ -19,10 +20,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // routes
+//route for index page
+app.use('/', homeRoutes);
 //route for signin form
-app.use('/login', signinRoutes);
+app.use('/login', loginRoutes);
 //route for register form
 app.use('/register', registerRoutes);
+//route for tracking car on arrival
+app.use('/cartracking', registerRoutes);
 
 
 // handle non existing routes

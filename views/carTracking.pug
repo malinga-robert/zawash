@@ -1,0 +1,117 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title=title 
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/styles.css')
+  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
+  link(rel="stylesheet", href="/styles.css", type="text/css")
+nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
+  h2.navbar-brand.brand-name
+    a(href='index.html')
+      img.img-responsive2(src='/images/logo.png')
+  a.navbar-brand(href='/')
+    strong ZAWASH
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        a.nav-link(href='/')
+          | Home
+          span.sr-only (current)
+    .nav.navbar-nav.navbar-right
+      ul.nav.navbar-nav.navbar-right
+        li.nav-item
+          a.nav-link(href='/cartracking/cartracking') CarTracking
+        li.nav-item
+          a.nav-link(href='/login') Login
+        li.nav-item
+          a.nav-link(href='/register') Register
+center
+  form.carreg(action='cartracking' method='POST' name='carreg')
+    h1 Car Registration
+    .container
+      .row.d-flex.justify-content-center
+        .col-mg
+          .form-group.mr-2
+            label.sr-only(for='inputNumberplate') Numberplate
+            input#inputNumberplate.form-control(type='text' name='numberplate' placeholder='Enter NumberPlate' required='')
+            #numberplateErr.error
+          br
+          .color
+            label.sr-only(for='inputColor') Color
+            input#inputColor.form-control(type='text' name='color' placeholder='Enter Car Color')
+        .col-mg
+          .form-group.mr-2
+            label.sr-only(for='inputTime') timeOfArrival
+            input#inputTime.form-control(type='text' name='time' placeholder='Time of Arrival' onclick="(this.type='Time')")
+          br
+          .form-group.mr-2
+            label.sr-only(for='inputDate') Date
+            input#inputColor.form-control(type='text' name='date' placeholder='Enter Date' onclick="(this.type='Date')")
+        .col-mg
+          .form-group.mr-2
+            label.sr-only(for='inputMake') Make
+            input#inputMake.form-control(type='text' name='inputMake' placeholder='Enter Car Make')
+          br
+          .form-group.mr-2
+            label.sr-only(for='inputType') Type
+            input#inputColor.form-control(type='text' name='color' placeholder='Enter Car Type')
+      br
+      .row.d-flex.justify-content-center
+        .form-group.mr-2
+          label(for='inputColor') Asign Washers
+          select#Washers(name='Washers')
+            option(value='Names') Washers
+            option(value='Kato Mark') Kato Mark
+            option(value='Medi Ali') Medi Ali
+            option(value='Opio Paul') Opio Paul
+        .form-group.mr-2
+          label.sr-only(for='inputColor') Asign Washers:
+          select#Washers(name='Washers')
+            option(value='Names') Washers
+            option(value='Kato Mark') Kato Mark
+            option(value='Medi Ali') Medi Ali
+            option(value='Opio Paul') Opio Paul
+        .form-group.mr-2
+          label.sr-only(for='inputColor') Asign Washers:
+          select#Washers(name='Washers')
+            option(value='Names') Washers
+            option(value='Kato Mark') Kato Mark
+            option(value='Medi Ali') Medi Ali
+            option(value='Opio Paul') Opio Paul
+      br
+      .row.d-flex.justify-content-center
+        .form-group.mr-2
+          label(for='inputPackage') Packages
+          select#Packages(name='packages')
+            option(value='Package') -----------Select A Package----------
+            option(value='Small Car') (Asign 1 washer)Small Car(10000/=)
+            option(value='Medium Car') (Asign 2 washers)Medium Car(15000/=)
+            option(value='Full Wash') (Asign 3 washers)Full Wash(20000/=)
+            option(value='Boda-Boda') Boda-Boda(5000/=)
+            option(value='Full Wash') Engine(10000/=)
+        .form-group.mr-2
+          label(for='inputColor') Amount Due
+          select#Payment(name='Payment')
+            option(value='Price') ---Select the amount due---
+            option(value='Small Car wash') Small Car wash(3000/=)
+            option(value='Medium Car Wash') Medium Car Wash(4000/=)
+            option(value='Boda-Boda') Boda-Boda(1500/=)
+      br
+      button.form-control.btn.btn-primary(name='submit')
+        | submit
+br
+br
+// footer copyright message
+footer.bg-light.text-center.text-lg-start
+  .text-center.p-3(style='background-color: black; color: white')
+    | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by
+    | Malinga Robert
+script(src='css/jquery-3.6.0.js')
+script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')
+script(src='/carRegister.js')

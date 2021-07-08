@@ -1,3 +1,5 @@
+
+
 p {
     color: black;
 }
@@ -17,14 +19,20 @@ H1{
     color: red;
     font-size: 30px;
     text-align: center;
-    font-style: normal; 
+    font-style: normal;
 }
 .login-form{
-    margin: 40px;
+    margin: 20px;
     width: 60px;
     padding-left: 70%;
+}   
+.Login-form {
+      border: 2px solid rgb(226, 226, 226);
+      padding: 40px 40px;
+      border-radius: 10px;
+      
 }
-
+  
 
 .login{
     border: 2px solid grey; 
@@ -53,14 +61,43 @@ background-color: white;
 }
 .regform h1{
 color: blue;
+padding-bottom: 15px;
 
+}
+span{
+    color: red;
 }
 
 
 .regform p{
     text-align: left;
+    margin-bottom: 2px;
 }
 .gender{
 float: left;
 color: black;
+}
+
+.val_error{
+    color: red;
+}
+.carreg{
+   margin-top: 80px;
+   border: 1px solid grey;
+   width: 700px;
+   padding-top: 30px;
+   padding-bottom: 30px;
+   justify-content: center;
+   align-content: center;
+   float: center;
+   background-color: lightgrey;
+   border-radius: 10px;
+}
+.carreg h1{
+    color: blue;
+    padding-bottom: 10px;
+}
+.carreg label{
+    color: black;
+
 }
