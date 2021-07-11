@@ -4,10 +4,25 @@ const path = require('path');
 const registerRoutes = require('./routes/registerRoutes');
 const loginRoutes = require('./routes/loginRoutes');
 const homeRoutes = require('./routes/homeRoutes');
+require('dotenv').config();
+const mongoose = require('mongoose');
 
 
 // instantiations
 const app = express()
+
+// mongodb connection
+mongoose.connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
+  mongoose.connection
+  .on('open', () => {
+    console.log('Mongoose connection open');
+  })
+  .on('error', (err) => {
+    console.log(`Connection error: ${err.message}`);
+  });
 
 
 // settings or configurations
@@ -24,10 +39,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', homeRoutes);
 //route for signin form
 app.use('/login', loginRoutes);
-//route for register form
-app.use('/register', registerRoutes);
 //route for tracking car on arrival
 app.use('/cartracking', registerRoutes);
+//route for register form
+app.use('/register', registerRoutes);
+//route for iventory form
+app.use('/iventory', registerRoutes);
+
 
 
 // handle non existing routes

@@ -1,4 +1,6 @@
-
+body{
+    background-color: rgb(236, 236, 240);
+}
 
 p {
     color: black;
@@ -25,6 +27,7 @@ H1{
     margin: 20px;
     width: 60px;
     padding-left: 70%;
+
 }   
 .Login-form {
       border: 2px solid rgb(226, 226, 226);
@@ -39,14 +42,14 @@ H1{
     width: 500px;
     padding: 50px;
     border-radius: 10px;
-    background-color: white;
+    background-color:lightgrey;
 }
 .login h1{
     color: blue;
     padding-bottom: 10px;
 }
  .login-form p{
-color: lightskyblue;
+color: blue;
  }
  .regform{
 border: 1px solid grey;
@@ -55,7 +58,7 @@ padding: 40px;
 margin: 50px;
 align-items: center;
 width: 400px;
-background-color: white;
+background-color: lightgrey;
 
 
 }
@@ -76,10 +79,29 @@ span{
 .gender{
 float: left;
 color: black;
+position: relative;
+padding-top: 8px;
 }
 
 .val_error{
     color: red;
+    position: relative;
+    float: left;
+}
+#nationalid_error{
+    position: relative;
+    margin-top:  -20px;
+    margin-bottom: 20px;
+}
+#dateofbirth_error{
+    position: relative;
+    margin-top:  -20px;
+    margin-bottom: 20px;
+}
+#gender_error{
+    position: relative;
+    margin-top: -15px;
+    margin-bottom: 20px;
 }
 .carreg{
    margin-top: 80px;
@@ -92,12 +114,34 @@ color: black;
    float: center;
    background-color: lightgrey;
    border-radius: 10px;
+   position: relative;
+   justify-items: fixed; 
+   background-color: lightgrey;
 }
 .carreg h1{
-    color: blue;
+    color:  blue;
     padding-bottom: 10px;
 }
 .carreg label{
-    color: black;
-
+    font-size: 18px;
+    color: blue;
 }
+.error{
+    color: red;
+}
+#asign{
+    padding-top:  -15px;
+    margin-top: -25px;
+}
+.carreg p{
+    font-size: 18px;
+    color: blue;
+}
+.hat{
+    border: 1px solid brown;
+    width: 600px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+}
+
+

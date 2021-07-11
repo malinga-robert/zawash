@@ -23,6 +23,8 @@ nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
         a.nav-link(href='/')
           | Home
           span.sr-only (current)
+      li.nav-item
+      a.nav-link(href='/iventory/iventory') Iventory
     .nav.navbar-nav.navbar-right
       ul.nav.navbar-nav.navbar-right
         li.nav-item
@@ -39,9 +41,9 @@ center
       #name_error.val_error
       .gender
         label.form-label(for='gender' name='gender') Gender:
-        input(type='radio' name='gender' id='' value='male')
+        input#male(type='radio' name='gender' value='male')
         | Male
-        input(type='radio' name='gender' id='' value='female')
+        input#female(type='radio' name='gender' value='female')
         | Female
         #gender_error.val_error
       .dob
@@ -49,18 +51,18 @@ center
         br
         #dateofbirth_error.val_error
       .nID
-        input#nationalid.form-control(type='text' name='nationalid' placeholder='NationalID NIN' required='')
+        input#nationalid.form-control(type='text' name='nationalid' placeholder='NationalID NIN')
         br
         #nationalid_error.val_error
       .residence
-        input#residence.form-control(type='text' name='residence' placeholder='Enter Place Of Residence' required='')
+        input#residence.form-control(type='text' name='residence' placeholder='Enter Place Of Residence')
         #residence_error.val_error
       .EmployeeID
         p EmployeeID
-        input#employeeid.form-control(type='text' name='emloyeeid' placeholder="EmployeeID 'ZWASH-3-7-9'" required='')
+        input#employeeid.form-control(type='text' name='employeeid' placeholder="EmployeeID 'ZWASH-3-7-9'")
         #employeeid_error.val_error
       br
-      button.form-control.btn.btn-primary(type='button' onclick='Validate()' name='submit')
+      button.form-control.btn.btn-primary(type='submit' onclick='Validate()' name='submit')
         | submit
 // footer copyright message
 footer.bg-light.text-center.text-lg-start
@@ -69,4 +71,4 @@ footer.bg-light.text-center.text-lg-start
     | Malinga Robert
 script(src='css/jquery-3.6.0.js')
 script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')
-script(src='/register.js')
+//- script(src='/register.js')

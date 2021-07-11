@@ -1,0 +1,86 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Iventory
+  link(rel='stylesheet' href='/iventory.css')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/styles.css')
+  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
+  link(rel="stylesheet", href="/iventory.css", type="text/css")
+// navbar
+nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
+  h2.navbar-brand.brand-name
+    a(href='index.html')
+      img.img-responsive2(src='/images/logo.png')
+  a.navbar-brand(href='index.html')
+    strong ZAWASH
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        a.nav-link(href='/index.html')
+          | Home
+          span.sr-only (current)
+      li.nav-item
+        a.nav-link(href='/iventory') Iventory
+    .nav.navbar-nav.navbar-right
+      ul.nav.navbar-nav.navbar-right
+        li.nav-item
+          a.nav-link(href='/cartracking/cartracking') CarTracking 
+        li.nav-item
+          a.nav-link(href='/login') Login
+        li.nav-item
+          a.nav-link(href='/register') Register
+center
+  form.iventory(name='contactForm' onsubmit='return validateForm()' action='iventory' method='post')
+    h2 Iventory Cost Form
+    .row
+      label
+      select(name='Polish')
+        option --Select Polish--
+        option Polish
+        option Powdered Detergents
+        option Electricity Units
+      #polishErr.error
+    .row
+      label
+      input(type='text' name='polishCost' placeholder='Enter the Cost of Polish')
+      #polcostErr.error
+    .row
+      label
+      select(name='Detergents')
+        option --Select Powdered Detergents--
+        option Polish
+        option Powdered Detergents
+        option Electricity Units
+      #detergentErr.error
+    .row
+      label
+      input(type='text' name='detergentsCost' placeholder='Enter The Cost of Detergents Selection')
+      #detercostErr.error
+    .row
+      label
+      select(name='Electricity')
+        option --Select Electricity Units--
+        option Polish
+        option Powdered Detergents
+        option Electricity Units
+      #electricityErr.error
+    .row
+      label
+      input(type='text' name='electricityCost' placeholder='Enter the Cost of Electricity Units')
+      #eleccostErr.error
+    .row
+      input(type='submit' name='submit' value='Submit')
+br
+br
+// footer Copyright message
+footer.bg-light.text-center.text-lg-start
+  .text-center.p-3(style='background-color: black;')
+    | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by Malinga Robert
+script(src='css/jquery-3.6.0.js')
+script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')
