@@ -1,11 +1,11 @@
 var numberplate = document.forms["carreg"]["numberplate"];
 var time = document.forms["carreg"]["time"];
 var date = document.forms["carreg"]["date"];
-var inputMake = document.forms["carreg"]["inputMake"];
-var inputType = document.forms["carreg"]["inputType"];
+var Make = document.forms["carreg"]["Make"];
+var Type = document.forms["carreg"]["Type"];
 var washers = document.forms["carreg"]["washers"];
 var payment = document.forms["carreg"]["payment"];
-var inputColor = document.getElementById('inputColor');
+var Color = document.getElementById('Color');
 var packages = document.forms["carreg"]["packages"];
 
 

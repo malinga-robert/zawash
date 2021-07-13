@@ -24,18 +24,23 @@ nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
           | Home
           span.sr-only (current)
       li.nav-item
-      a.nav-link(href='/iventory/iventory') Iventory
+      a.nav-link(href='/iventory') Iventory
     .nav.navbar-nav.navbar-right
       ul.nav.navbar-nav.navbar-right
         li.nav-item
-          a.nav-link(href='/cartracking/cartracking') CarTracking
+          a.nav-link(href='/cartracking') CarTracking
         li.nav-item
           a.nav-link(href='/login') Login
         li.nav-item
           a.nav-link(href='/register') Register
 center
   .Register
-    form.regform(action='register' method='POST' name='register-form')
+    if alert =='success'
+      div.alert.alert-success Washer information added successfully
+    if alert =='error'
+      div.alert.alert-danger An error occured, failed to add information
+
+    form.regform(action='register' method='POST' name='register-form' onsubmit='return Validate();')
       h1 Register Washer Here
       input#fullname.form-control(type='text' name='fullname' placeholder='Enter Your Fullnames')
       #name_error.val_error
@@ -62,7 +67,7 @@ center
         input#employeeid.form-control(type='text' name='employeeid' placeholder="EmployeeID 'ZWASH-3-7-9'")
         #employeeid_error.val_error
       br
-      button.form-control.btn.btn-primary(type='submit' onclick='Validate()' name='submit')
+      button.form-control.btn.btn-primary(type='submit')
         | submit
 // footer copyright message
 footer.bg-light.text-center.text-lg-start

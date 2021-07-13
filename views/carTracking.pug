@@ -24,17 +24,21 @@ nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
           | Home
           span.sr-only (current)
       li.nav-item
-      a.nav-link(href='/iventory/iventory') Iventory
+      a.nav-link(href='/iventory') Iventory
     .nav.navbar-nav.navbar-right
       ul.nav.navbar-nav.navbar-right
         li.nav-item
-          a.nav-link(href='/cartracking/cartracking') CarTracking
+          a.nav-link(href='/cartracking') CarTracking
         li.nav-item
           a.nav-link(href='/login') Login
         li.nav-item
           a.nav-link(href='/register') Register
 center
-  form.carreg(action='cartracking/cartracking' method='POST' name='carreg')
+  if alert =='success'
+    div.alert.alert-success Vehicle information added successfully
+  if alert =='error'
+    div.alert.alert-danger An error occured, failed to add information
+  form.carreg(action='cartracking' method='POST' name='carreg' onsubmit='return Validate();')
     h1 Car Registration
     .container
       .row.d-flex.justify-content-center
@@ -47,7 +51,7 @@ center
           .form-group.mr-2
             label.sr-only(for='inputColor') Color
             #colorErr.error
-            input#inputColor.form-control(type='text' name='inputColor' placeholder='Enter Car Color')
+            input#inputColor.form-control(type='text' name='Color' placeholder='Enter Car Color')
         .col-mg
           .form-group.mr-2
             label.sr-only(for='inputTime') timeOfArrival
@@ -62,12 +66,12 @@ center
           .form-group.mr-2
             label.sr-only(for='inputMake') Make
             #makeErr.error
-            input#inputMake.form-control(type='text' name='inputMake' placeholder='Enter Car Make')
+            input#inputMake.form-control(type='text' name='Make' placeholder='Enter Car Make')
           br
           .form-group.mr-2
             label.sr-only(for='inputType') Type
             #typeErr.error
-            input#inputType.form-control(type='text' name='inputType' placeholder='Enter Car Type')
+            input#inputType.form-control(type='text' name='Type' placeholder='Enter Car Type')
       p
         strong Asign Washers
       .row.d-flex.justify-content-center
@@ -76,23 +80,25 @@ center
           #asignErr.error
           select#washers.form-control(name='washers')
             option(value='' selected='' disabled='') --Washers--
+            each washer in washers 
+              option(value=washer._id) #{washer.fullname}
             option(value='Kato Mark') Kato Mark
             option(value='Medi Ali') Medi Ali
             option(value='Opio Paul') Opio Paul
-        .form-group.mr-2
-          label.sr-only(for='inputColor') Asign Washers:
-          select#Washers.form-control(name='Washers')
-            option(value='' selected='' disabled='') --Washers--
-            option(value='Kato Mark') Kato Mark
-            option(value='Medi Ali') Medi Ali
-            option(value='Opio Paul') Opio Paul
-        .form-group.mr-2
-          label.sr-only(for='inputColor') Asign Washers:
-          select#Washers.form-control(name='Washers')
-            option(value='' selected='' disabled='') --Washers--
-            option(value='0') Kato Mark
-            option(value='1') Medi Ali
-            option(value='2') Opio Paul
+        //- .form-group.mr-2
+        //-   label.sr-only(for='inputColor') Asign Washers:
+        //-   select#Washers.form-control(name='Washers')
+        //-     option(value='' selected='' disabled='') --Washers--
+        //-     option(value='Kato Mark') Kato Mark
+        //-     option(value='Medi Ali') Medi Ali
+        //-     option(value='Opio Paul') Opio Paul
+        //- .form-group.mr-2
+        //-   label.sr-only(for='inputColor') Asign Washers:
+        //-   select#Washers.form-control(name='Washers')
+        //-     option(value='' selected='' disabled='') --Washers--
+        //-     option(value='0') Kato Mark
+        //-     option(value='1') Medi Ali
+        //-     option(value='2') Opio Paul
       .row.d-flex.justify-content-center
         .form-group.mr-2
           label(for='inputPackage')
@@ -115,7 +121,7 @@ center
             option(value='Medium Car Wash') Medium Car Wash(4000/=)
             option(value='Boda-Boda') Boda-Boda(1500/=)
       br
-      button.form-control.btn.btn-primary(type="submit" onclick='Validate();' name='submit')
+      button.form-control.btn.btn-primary(type="submit" name='submit')
         | submit
 br
 br

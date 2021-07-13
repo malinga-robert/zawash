@@ -4,6 +4,8 @@ const path = require('path');
 const registerRoutes = require('./routes/registerRoutes');
 const loginRoutes = require('./routes/loginRoutes');
 const homeRoutes = require('./routes/homeRoutes');
+const iventoryRoutes = require('./routes/iventoryRoutes');
+const carRoutes = require('./routes/carRoutes');
 require('dotenv').config();
 const mongoose = require('mongoose');
 
@@ -12,6 +14,7 @@ const mongoose = require('mongoose');
 const app = express()
 
 // mongodb connection
+//DATABASE1=mongodb://localhost:27017/corhot-0008
 mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -23,7 +26,7 @@ mongoose.connect(process.env.DATABASE, {
   .on('error', (err) => {
     console.log(`Connection error: ${err.message}`);
   });
-
+  
 
 // settings or configurations
 app.set('view engine', 'pug');
@@ -40,11 +43,11 @@ app.use('/', homeRoutes);
 //route for signin form
 app.use('/login', loginRoutes);
 //route for tracking car on arrival
-app.use('/cartracking', registerRoutes);
+app.use('/cartracking', carRoutes);
 //route for register form
 app.use('/register', registerRoutes);
 //route for iventory form
-app.use('/iventory', registerRoutes);
+app.use('/iventory', iventoryRoutes);
 
 
 

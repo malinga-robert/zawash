@@ -5,7 +5,7 @@ const vehicleSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
-  inputColor: {
+  Color: {
     type: String,
     trim: true,
   },
@@ -14,33 +14,23 @@ const vehicleSchema = new mongoose.Schema({
     trim: true,
     
   },
-  inputMake: {
+  Make: {
     type: String,
     trim: true,
   },
-  inputType: {
-    type: String,
-    trim: true,
-  },
-  washers: {
+  Type: {
     type: String,
     trim: true,
   },
   washers: {
-    type: String,
-    trim: true,
-  },
-  washers: {
-    type: String,
-    trim: true,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Washer',
   },
   Packages: {
-    type: String,
-    trim: true,
+    type: Number,
   },
   Payment: {
-    type: String,
-    trim: true,
+    type: Number,
   },
 });
 module.exports = mongoose.model('Vehicle', vehicleSchema);
