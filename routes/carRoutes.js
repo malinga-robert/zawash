@@ -3,7 +3,13 @@ const router = express.Router();
 const Vehicle = require('../models/Vehicle');
 const Washer = require('../models/Washer');
 
-
+washPackages = {
+    smallcars: {washerFee:3000,  packagePrice:10000},
+    medium:   { washerFee:4000,  packagePrice:15000},
+    fullwash: { washerFee:5000,  packagePrice:20000},
+    bodaboda: { washerFee:1500,  packagePrice:5000},
+    engine:   { washerFee:2000,  packagePrice:10000}
+}
 
 
 router.get('/',async(req,res)=>{

@@ -1,29 +1,18 @@
 const mongoose = require('mongoose');
 
 const expenceSchema = new mongoose.Schema({
-  Polish: {
+  item: {
     type: String,
     trim: true,
   },
-  polishCost: {
+  itemCost: {
     type: String,
     trim: true,
   },
-  Detergents: {
-    type: String,
+  currentdate: {
+    type: Date,
     trim: true,
   },
-  detergentsCost: {
-    type: String,
-    trim: true,
-  },
-  Electricity: {
-    type: String,
-    trim: true,
-  },
-  electricityCost: {
-    type: String,
-    trim: true,
-  },
+  
 });
 module.exports = mongoose.model('Expence', expenceSchema);

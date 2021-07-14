@@ -3,14 +3,12 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Iventory
-  link(rel='stylesheet' href='/iventory.css')
+  title Pay Records
   link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
   link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
   link(rel='stylesheet' href='/css/styles.css')
   link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
-  link(rel="stylesheet", href="/iventory.css", type="text/css")
-// navbar
+  link(rel="stylesheet", href="/styles.css", type="text/css")
 nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
   h2.navbar-brand.brand-name
     a(href='index.html')
@@ -26,43 +24,42 @@ nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
           | Home
           span.sr-only (current)
       li.nav-item
-        a.nav-link(href='/iventory') Iventory
+        a.nav-link(href='/iventory.html') Iventory
     .nav.navbar-nav.navbar-right
       ul.nav.navbar-nav.navbar-right
         li.nav-item
-          a.nav-link(href='/cartracking') CarTracking 
+          a.nav-link(href='/carRegister.html') CarTracking 
         li.nav-item
-          a.nav-link(href='/login') Login
+          a.nav-link(href='/signin.html') Login
         li.nav-item
-          a.nav-link(href='/register') Register
+          a.nav-link(href='/register.html') Register
+br
+br
+br
 center
-  form.iventory(name='contactForm' onsubmit='return validateForm()' action='iventory' method='post')
-    h2 Iventory Cost Form
-    .row
-      label
-      select(name='item')
-        option --Select Item--
-        option Polish
-        option Powdered Detergents
-        option Electricity Units
-      #itemErr.error
-    .row
-      label
-      input(type='number' name='itemCost' placeholder='Enter the Cost of Item')
-      #costErr.error
-    
-    .row
-      label
-      input#dateofbirth.form-control(type='text' name='currentdate' placeholder='Enter Current date' onclick="(this.type='Date')")
-      #dateErr.error
-    
-    .row
-      input(type='submit')
-br
-br
-// footer Copyright message
-footer.bg-light.text-center.text-lg-start
-  .text-center.p-3(style='background-color: black;')
-    | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by Malinga Robert
-script(src='css/jquery-3.6.0.js')
-script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')
+  h1 Payment Records of Washers
+  br
+  form.search(action='payout')
+    .form-row
+      .col-md-8
+        input.form-control(type='date' name='searchdate' value='defaultDate')
+      .col-md-4
+        input.btn.btn-primary.btn-block(type='submit')
+  table.table.table-bordered
+    thead
+      tr
+        th(scope='col')
+        th(scope='col') Washers
+        th(scope='col') Number of Cars Washed
+        th(scope='col') Payment Due
+    tbody
+    if washers.length
+      each washer in washers    
+        tr
+          th(scope='row') 1
+          td #{washer.detailes[0].fullname}
+          td #{washer.count}
+          td #{washer.totalPayout}
+      tr
+        th(scope='colspan=2') Total Payout
+        td #{new Intl.NumberFormat().format(sumPayout.totalPayoutPerDay)}

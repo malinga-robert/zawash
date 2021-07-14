@@ -26,11 +26,15 @@ const vehicleSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Washer',
   },
-  Packages: {
-    type: Number,
+  package: {
+    type: String,
+    trim: true,
   },
-  Payment: {
+  packagePrice: {
     type: Number,
-  },
+  }, 
+ washerFee: {
+  type: Number,
+ },
 });
 module.exports = mongoose.model('Vehicle', vehicleSchema);

@@ -6,8 +6,14 @@ const loginRoutes = require('./routes/loginRoutes');
 const homeRoutes = require('./routes/homeRoutes');
 const iventoryRoutes = require('./routes/iventoryRoutes');
 const carRoutes = require('./routes/carRoutes');
+const paymentRoutes = require('./routes/paymentRoutes');
+const reportRoutes = require('./routes/reportRoutes');
+
+// const reportRoutes = require('./routes/reportRoutes');
 require('dotenv').config();
 const mongoose = require('mongoose');
+const moment = require('moment');
+
 
 
 // instantiations
@@ -31,6 +37,8 @@ mongoose.connect(process.env.DATABASE, {
 // settings or configurations
 app.set('view engine', 'pug');
 app.set('views', './views');
+app.locals.moment = moment
+
 
 // middleware
 app.use(express.urlencoded({extended: true}));
@@ -48,6 +56,12 @@ app.use('/cartracking', carRoutes);
 app.use('/register', registerRoutes);
 //route for iventory form
 app.use('/iventory', iventoryRoutes);
+//route for iventory form
+app.use('/payout', paymentRoutes);
+//route for report form
+app.use('/report', reportRoutes);
+
+
 
 
 

@@ -104,24 +104,24 @@ center
           label(for='inputPackage')
             strong Packages
           #packageErr.error
-          select#Packages.form-control(name='packages')
+          select#Packages.form-control(name='package')
             option(value='' selected='' disabled='') -----------Select A Package----------
-            option(value='Small Car') (Asign 1 washer)Small Car(10000/=)
-            option(value='Medium Car') (Asign 2 washers)Medium Car(15000/=)
-            option(value='Full Wash') (Asign 3 washers)Full Wash(20000/=)
-            option(value='Boda-Boda') Boda-Boda(5000/=)
-            option(value='Full Wash') Engine(10000/=)
+            option(value='smallcars') (Asign 1 washer)Small Car(10000/=)
+            option(value='medium') (Asign 2 washers)Medium Car(15000/=)
+            option(value='fullwash') (Asign 3 washers)Full Wash(20000/=)
+            option(value='bodaboda') Boda-Boda(5000/=)
+            option(value='engine') Engine(10000/=)
         .form-group.mr-2
           label(for='inputColor')
             strong Amount Due
           #paymentErr.error
           select#payment.form-control(name='payment')
             option(value='' selected='' disabled='') ---Select the amount due---
-            option(value='Small Car wash') Small Car wash(3000/=)
-            option(value='Medium Car Wash') Medium Car Wash(4000/=)
+            option(value='SmallCar') Small Car wash(3000/=)
+            option(value='MediumCar') Medium Car Wash(4000/=)
             option(value='Boda-Boda') Boda-Boda(1500/=)
       br
-      button.form-control.btn.btn-primary(type="submit" name='submit')
+      button.form-control.btn.btn-primary(type="submit")
         | submit
 br
 br
