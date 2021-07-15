@@ -1,65 +1,65 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Pay Records
-  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
-  link(rel='stylesheet' href='/css/styles.css')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
-  link(rel="stylesheet", href="/styles.css", type="text/css")
-nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
-  h2.navbar-brand.brand-name
-    a(href='index.html')
-      img.img-responsive2(src='/images/logo.png')
-  a.navbar-brand(href='index.html')
-    strong ZAWASH
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-    span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto
-      li.nav-item.active
-        a.nav-link(href='/index.html')
-          | Home
-          span.sr-only (current)
-      li.nav-item
-        a.nav-link(href='/iventory.html') Iventory
-    .nav.navbar-nav.navbar-right
-      ul.nav.navbar-nav.navbar-right
-        li.nav-item
-          a.nav-link(href='/carRegister.html') CarTracking 
-        li.nav-item
-          a.nav-link(href='/signin.html') Login
-        li.nav-item
-          a.nav-link(href='/register.html') Register
-br
-br
-br
-center
-  h1 Payment Records of Washers
-  br
-  form.search(action='payout')
-    .form-row
-      .col-md-8
-        input.form-control(type='date' name='searchdate' value='defaultDate')
-      .col-md-4
-        input.btn.btn-primary.btn-block(type='submit')
-  table.table.table-bordered
-    thead
-      tr
-        th(scope='col')
-        th(scope='col') Washers
-        th(scope='col') Number of Cars Washed
-        th(scope='col') Payment Due
-    tbody
-    if washers.length
-      each washer in washers    
-        tr
-          th(scope='row') 1
-          td #{washer.detailes[0].fullname}
-          td #{washer.count}
-          td #{washer.totalPayout}
-      tr
-        th(scope='colspan=2') Total Payout
-        td #{new Intl.NumberFormat().format(sumPayout.totalPayoutPerDay)}
+//- doctype html
+//- head
+//-   meta(charset='UTF-8')
+//-   meta(http-equiv='X-UA-Compatible' content='IE=edge')
+//-   meta(name='viewport' content='width=device-width, initial-scale=1.0')
+//-   title Pay Records
+//-   link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+//-   link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
+//-   link(rel='stylesheet' href='/css/styles.css')
+//-   link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
+//-   link(rel="stylesheet", href="/styles.css", type="text/css")
+//- nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
+//-   h2.navbar-brand.brand-name
+//-     a(href='index.html')
+//-       img.img-responsive2(src='/images/logo.png')
+//-   a.navbar-brand(href='index.html')
+//-     strong ZAWASH
+//-   button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+//-     span.navbar-toggler-icon
+//-   #navbarSupportedContent.collapse.navbar-collapse
+//-     ul.navbar-nav.mr-auto
+//-       li.nav-item.active
+//-         a.nav-link(href='/index.html')
+//-           | Home
+//-           span.sr-only (current)
+//-       li.nav-item
+//-         a.nav-link(href='/iventory.html') Iventory
+//-     .nav.navbar-nav.navbar-right
+//-       ul.nav.navbar-nav.navbar-right
+//-         li.nav-item
+//-           a.nav-link(href='/carRegister.html') CarTracking 
+//-         li.nav-item
+//-           a.nav-link(href='/signin.html') Login
+//-         li.nav-item
+//-           a.nav-link(href='/register.html') Register
+//- br
+//- br
+//- br
+//- center
+//-   h1 Payment Records of Washers
+//-   br
+//-   form.search(action='payout')
+//-     .form-row
+//-       .col-md-8
+//-         input.form-control(type='date' name='searchdate' value='defaultDate')
+//-       .col-md-4
+//-         input.btn.btn-primary.btn-block(type='submit')
+//-   table.table.table-bordered
+//-     thead
+//-       tr
+//-         th(scope='col')
+//-         th(scope='col') Washers
+//-         th(scope='col') Number of Cars Washed
+//-         th(scope='col') Payment Due
+//-     tbody
+//-     if washers.length
+//-       each washer in washers    
+//-         tr
+//-             th(scope='row') 1
+//-             td #{washer.detailes[0].fullname}
+//-             td #{washer.count}
+//-             td #{washer.totalPayout}
+//-       tr
+//-         th(scope='colspan=2') Total Payout
+//-         td #{new Intl.NumberFormat().format(sumPayout.totalPayoutPerDay)}

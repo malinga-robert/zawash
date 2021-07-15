@@ -6,8 +6,18 @@ const loginRoutes = require('./routes/loginRoutes');
 const homeRoutes = require('./routes/homeRoutes');
 const iventoryRoutes = require('./routes/iventoryRoutes');
 const carRoutes = require('./routes/carRoutes');
-const paymentRoutes = require('./routes/paymentRoutes');
+// const paymentRoutes = require('./routes/paymentRoutes');
 const reportRoutes = require('./routes/reportRoutes');
+const expressSession = require('express-session')({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false
+});
+const passport = require('passport');
+const passportLocalMongoose = require('passport-local-mongoose');
+
+
+
 
 // const reportRoutes = require('./routes/reportRoutes');
 require('dotenv').config();
@@ -43,6 +53,13 @@ app.locals.moment = moment
 // middleware
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(expressSession);
+// app.use(passport.initialize());
+// app.use(passport.session());
+// passport.use(Manager.createStrategy());
+// passport.serializeUser(Manager.serializeUser());
+// passport.deserializeUser(Manager.deserializeUser());
+
 
 
 // routes
@@ -57,7 +74,7 @@ app.use('/register', registerRoutes);
 //route for iventory form
 app.use('/iventory', iventoryRoutes);
 //route for iventory form
-app.use('/payout', paymentRoutes);
+// app.use('/payout', paymentRoutes);
 //route for report form
 app.use('/report', reportRoutes);
 

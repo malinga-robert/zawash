@@ -24,6 +24,8 @@ nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
           | Home
           span.sr-only (current)
       li.nav-item
+          a.nav-link(href='/report/payout') Dashboard 
+      li.nav-item
       a.nav-link(href='/iventory') Iventory
     .nav.navbar-nav.navbar-right
       ul.nav.navbar-nav.navbar-right
@@ -44,13 +46,13 @@ center
       h1 Register Washer Here
       input#fullname.form-control(type='text' name='fullname' placeholder='Enter Your Fullnames')
       #name_error.val_error
-      .gender
-        label.form-label(for='gender' name='gender') Gender:
-        input#male(type='radio' name='gender' value='male')
-        | Male
-        input#female(type='radio' name='gender' value='female')
-        | Female
+        br
+        select#Packages.form-control(name='gender')
+              option(value='' selected='' disabled='') --Select Gender--
+              option(value='male') Male
+              option(value='female') Female
         #gender_error.val_error
+        br  
       .dob
         input#dateofbirth.form-control(type='text' name='dateofbirth' placeholder='Date Of Birth' onclick="(this.type='Date')")
         br

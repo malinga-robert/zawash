@@ -5,7 +5,7 @@ const vehicleSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
-  Color: {
+  color: {
     type: String,
     trim: true,
   },
@@ -14,15 +14,19 @@ const vehicleSchema = new mongoose.Schema({
     trim: true,
     
   },
-  Make: {
+  make: {
     type: String,
     trim: true,
   },
-  Type: {
+  type: {
     type: String,
     trim: true,
   },
-  washers: {
+  doa: {
+    type: Date,
+    trim: true,
+  },
+  washer: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Washer',
   },

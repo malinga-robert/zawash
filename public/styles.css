@@ -1,11 +1,20 @@
 .table{
     border: grey;
-    width: 800px;
+    width: 700px;
     /* padding-top: 50px; */
     margin-bottom: 70px;
+    float: center;
+}
+.card-header{
+    width: 700px;
+    align-self: center;
+    background-color: grey;
+}
+#nav-tab.nav.nav-tabs{
+    width: 800px;
 }
 .search{
-    width: 800px;
+    width: 700px;
 }
 
 p {

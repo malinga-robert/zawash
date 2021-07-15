@@ -1,33 +1,53 @@
 doctype html
-head
-  meta(charset='utf-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
-  title ZAWASH
-  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
-  link(rel='stylesheet' href='/css/styles.css')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
-// navbar
-nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
-  h2.navbar-brand.brand-name
-    a(href='index.html')
-      img.img-responsive2(src='/images/logo.png')
-  a.navbar-brand(href='index.html')
-    strong ZAWASH
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-    span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto
-      li.nav-item.active
-        a.nav-link(href='/index.html')
-          | Home
-          span.sr-only (current)
-    .nav.navbar-nav.navbar-right
-      ul.nav.navbar-nav.navbar-right
-        li.nav-item
-          a.nav-link(href='/carRegister.html') CarTracking 
-        li.nav-item
-          a.nav-link(href='/signin.html') Login
-        li.nav-item
-          a.nav-link(href='/register.html') Register
-block content    
+html
+    head
+        //- link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+        title= title
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+        //- link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
+        //- link(rel='stylesheet' href='/css/styles.css')
+        link(rel="stylesheet", href="/styles.css", type="text/css")
+        link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
+        script(src='css/jquery-3.6.0.js')
+        script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')
+    body
+    nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
+        h2.navbar-brand.brand-name
+            a(href='index.html')
+            img.img-responsive2(src='/images/logo.png')
+        a.navbar-brand(href='/')
+            strong ZAWASH
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.mr-auto
+            li.nav-item.active
+                a.nav-link(href='/')
+                | Home
+                span.sr-only (current)
+            li.nav-item
+            a.nav-link(href='/iventory') Iventory
+            .nav.navbar-nav.navbar-right
+            ul.nav.navbar-nav.navbar-right
+                li.nav-item
+                a.nav-link(href='/cartracking') CarTracking 
+                li.nav-item
+                a.nav-link(href='/login') Login
+                li.nav-item
+                a.nav-link(href='/register') Register
+center                 
+    div.row.justify-content-center
+        div.col-md-6
+            div.card-body
+                block content
+footer.row.justify-content-center
+    div.col-md-6
+        block footer
+        div.float-left
+            a(href='/') Registrations 
+            span | 
+            a(href='/report/payout') Reports
+        div.float-right © 2021 Refactory Cohort 0008, NodeJS.

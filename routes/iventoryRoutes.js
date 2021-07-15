@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Expence = require('../models/Expence');
+const Expense = require('../models/Expense');
 
 
 router.get('/',(req,res)=>{
@@ -9,8 +9,8 @@ router.get('/',(req,res)=>{
 
 router.post('/',(req,res)=>{
     console.log(req.body)
-    const expence = new Expence(req.body);
-    expence.save()
+    const expense = new Expense(req.body);
+    expense.save()
         .then(() => { res.send('Thank you for your registration!'); })
         .catch((err) => {
         console.log(err);

@@ -1,0 +1,35 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Register Manager
+  link(rel='stylesheet' href='/public/iventory.css')
+form(name='contactForm' onsubmit='return validateForm()' action='/' method='post')
+  h2 Manager Signup Form
+  .row
+    label First Name
+    input#firsname(type='text' name='firstname')
+    #fnameErr.error
+  .row
+    label Second Name
+    input#secondname(type='text' name='secondname')
+    #snameErr.error
+  .row
+    label Email Address
+    input#email(type='text' name='email')
+    #emailErr.error
+  .row
+    label Mobile Number
+    input#number(type='text' name='number')
+    #mobileErr.error
+  .row
+    label Enter Password
+    input#password(type='text' name='password')
+    #passErr.error
+  .row
+    label Re-Enter Password
+    input#re_enterpassword(type='text' name='re_enterpassword')
+    #repassErr.error
+  .row
+    input(type='submit' value='Submit')

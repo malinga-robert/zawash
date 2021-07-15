@@ -24,6 +24,8 @@ nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
           | Home
           span.sr-only (current)
       li.nav-item
+          a.nav-link(href='/report/payout') Dashboard 
+      li.nav-item
       a.nav-link(href='/iventory') Iventory
     .nav.navbar-nav.navbar-right
       ul.nav.navbar-nav.navbar-right
@@ -51,34 +53,34 @@ center
           .form-group.mr-2
             label.sr-only(for='inputColor') Color
             #colorErr.error
-            input#inputColor.form-control(type='text' name='Color' placeholder='Enter Car Color')
+            input#inputColor.form-control(type='text' name='color' placeholder='Enter Car Color')
         .col-mg
           .form-group.mr-2
             label.sr-only(for='inputTime') timeOfArrival
             #timeErr.error
-            input#inputTime.form-control(type='text' name='time' placeholder='Time of Arrival' onclick="(this.type='Time')")
+            input#inputTime.form-control(type='text' name='toa' placeholder='Time of Arrival' onclick="(this.type='Time')")
           br
           .form-group.mr-2
             label.sr-only(for='inputDate') Date
             #dateErr.error
-            input#inputColor.form-control(type='text' name='date' placeholder='Enter Date' onclick="(this.type='Date')")
+            input#inputColor.form-control(type='text' name='doa' placeholder='Enter Date' onclick="(this.type='Date')")
         .col-mg
           .form-group.mr-2
             label.sr-only(for='inputMake') Make
             #makeErr.error
-            input#inputMake.form-control(type='text' name='Make' placeholder='Enter Car Make')
+            input#inputMake.form-control(type='text' name='make' placeholder='Enter Car Make')
           br
           .form-group.mr-2
             label.sr-only(for='inputType') Type
             #typeErr.error
-            input#inputType.form-control(type='text' name='Type' placeholder='Enter Car Type')
+            input#inputType.form-control(type='text' name='type' placeholder='Enter Car Type')
       p
         strong Asign Washers
       .row.d-flex.justify-content-center
         #asign.form-group.mr-2
           label(for='inputColor')
           #asignErr.error
-          select#washers.form-control(name='washers')
+          select#washers.form-control(name='washer')
             option(value='' selected='' disabled='') --Washers--
             each washer in washers 
               option(value=washer._id) #{washer.fullname}

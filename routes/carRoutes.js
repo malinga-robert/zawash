@@ -21,7 +21,7 @@ router.post('/',async(req,res)=>{
     try{
         // combine the date and time
         let data = req.body
-        let datetimeArrival = Date.parse(data.date + 'T' + data.time)
+        let datetimeArrival = Date.parse(data.doa + 'T' + data.toa)
         data.datetimeArrival = datetimeArrival
         
         //derive the package price and the washer fee
