@@ -5,9 +5,9 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title=title 
   link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
   link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
   link(rel='stylesheet' href='/css/styles.css')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
   link(rel="stylesheet", href="/styles.css", type="text/css")
 nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
   h2.navbar-brand.brand-name
@@ -32,9 +32,14 @@ nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
         li.nav-item
           a.nav-link(href='/cartracking') CarTracking
         li.nav-item
-          a.nav-link(href='/login') Login
+          a.nav-link(href='/register/manager') AddManager
         li.nav-item
           a.nav-link(href='/register') Register
+        li.nav-item
+          a.nav-link(href='/login') Login
+        li.nav-item
+          a.nav-link(href='/logout') Logout
+        
 center
   if alert =='success'
     div.alert.alert-success Vehicle information added successfully

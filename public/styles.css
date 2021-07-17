@@ -1,3 +1,4 @@
+
 .table{
     border: grey;
     width: 700px;
@@ -24,6 +25,7 @@ p {
 
 nav{
     font-style: color white;
+    
 }
 h5{
     color: RED;
@@ -39,7 +41,8 @@ H1{
     margin: 20px;
     width: 60px;
     padding-left: 70%;
-
+    
+    
 }   
 .Login-form {
       border: 2px solid rgb(226, 226, 226);
@@ -54,7 +57,8 @@ H1{
     width: 500px;
     padding: 50px;
     border-radius: 10px;
-    background-color:lightgrey;
+    background-color: white;
+    
 }
 .login h1{
     color: blue;
@@ -70,7 +74,7 @@ padding: 40px;
 margin: 50px;
 align-items: center;
 width: 400px;
-background-color: lightgrey;
+background-color: white;
 
 
 }
@@ -124,11 +128,11 @@ padding-top: 8px;
    justify-content: center;
    align-content: center;
    float: center;
-   background-color: lightgrey;
+   background-color: lightgray;
    border-radius: 10px;
    position: relative;
    justify-items: fixed; 
-   background-color: lightgrey;
+  
 }
 .carreg h1{
     color:  blue;
@@ -154,6 +158,11 @@ padding-top: 8px;
     width: 600px;
     padding-bottom: 20px;
     margin-top: 50px;
+}
+
+::placeholder.border{
+    border: black;
+    color: black;
 }
 
 

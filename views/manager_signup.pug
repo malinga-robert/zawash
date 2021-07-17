@@ -4,16 +4,56 @@ head
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Register Manager
-  link(rel='stylesheet' href='/public/iventory.css')
-form(name='contactForm' onsubmit='return validateForm()' action='/' method='post')
-  h2 Manager Signup Form
+  link(rel='stylesheet' href='/public/manager.css')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
+  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/styles.css')
+  link(rel="stylesheet", href="/manager.css", type="text/css")
+nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
+  h2.navbar-brand.brand-name
+    a(href='index.html')
+      img.img-responsive2(src='/images/logo.png')
+  a.navbar-brand(href='/')
+    strong ZAWASH
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        a.nav-link(href='/')
+          | Home
+          span.sr-only (current)
+      li.nav-item
+          a.nav-link(href='/report/payout') Dashboard    
+      li.nav-item
+      a.nav-link(href='/iventory') Iventory
+    .nav.navbar-nav.navbar-right
+      ul.nav.navbar-nav.navbar-right
+        li.nav-item
+          a.nav-link(href='/cartracking') CarTracking
+        li.nav-item
+          a.nav-link(href='/register/manager') AddManager
+        li.nav-item
+          a.nav-link(href='/register') Register 
+        li.nav-item
+          a.nav-link(href='/login') Login
+        li.nav-item
+          a.nav-link(href='/logout') Logout 
+if alert == "success"
+  div.alert.alert-success Manager added successfully!
+if alert == "error"
+  div.alert.alert-danger An error occurred, failed to add manager           
+
+form(name='contactForm' onsubmit='return validateForm()' action='/register/manager' method='post')
+  h2 Manager Signup
   .row
     label First Name
     input#firsname(type='text' name='firstname')
     #fnameErr.error
   .row
-    label Second Name
-    input#secondname(type='text' name='secondname')
+    label Last Name
+    input#secondname(type='text' name='lastname')
     #snameErr.error
   .row
     label Email Address
@@ -21,15 +61,21 @@ form(name='contactForm' onsubmit='return validateForm()' action='/' method='post
     #emailErr.error
   .row
     label Mobile Number
-    input#number(type='text' name='number')
+    input#number(type='number' name='phoneNumber')
     #mobileErr.error
   .row
     label Enter Password
-    input#password(type='text' name='password')
+    input#password(type='password' name='password')
     #passErr.error
   .row
-    label Re-Enter Password
-    input#re_enterpassword(type='text' name='re_enterpassword')
-    #repassErr.error
-  .row
     input(type='submit' value='Submit')
+br
+br
+
+// footer copyright message
+footer.bg-light.text-center.text-lg-start
+  .text-center.p-3(style='background-color: black; color: white')
+    | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by
+    | Malinga Robert
+script(src='css/jquery-3.6.0.js')
+script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')

@@ -3,7 +3,7 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Iventory
+  title=title 
   link(rel='stylesheet' href='/iventory.css')
   link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
   link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
@@ -15,14 +15,14 @@ nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
   h2.navbar-brand.brand-name
     a(href='index.html')
       img.img-responsive2(src='/images/logo.png')
-  a.navbar-brand(href='index.html')
+  a.navbar-brand(href='/')
     strong ZAWASH
   button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
     span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
       li.nav-item.active
-        a.nav-link(href='/index.html')
+        a.nav-link(href='/')
           | Home
           span.sr-only (current)
       li.nav-item
@@ -30,25 +30,37 @@ nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
     .nav.navbar-nav.navbar-right
       ul.nav.navbar-nav.navbar-right
         li.nav-item
-          a.nav-link(href='/cartracking') CarTracking 
+          a.nav-link(href='/cartracking') CarTracking
+        li.nav-item
+          a.nav-link(href='/register/manager') AddManager
+        li.nav-item
+          a.nav-link(href='/register') Register 
         li.nav-item
           a.nav-link(href='/login') Login
         li.nav-item
-          a.nav-link(href='/register') Register
+          a.nav-link(href='/logout') Logout
+        
+
+      
 center
+  if alert =='success' 
+    div.alert.alert-success Expense Cost added successfully
+  if alert =='error'
+    div.alert.alert-danger An error occured, failed to add information      
+  
   form.iventory(name='contactForm' onsubmit='return validateForm()' action='iventory' method='post')
     h2 Iventory Cost Form
     .row
       label
       select(name='item')
-        option --Select Item--
+        option(value='' selected='' disabled='') --Select Item--
         option Polish
         option Powdered Detergents
         option Electricity Units
       #itemErr.error
     .row
       label
-      input(type='number' name='itemCost' placeholder='Enter the Cost of Item')
+      input(type='number' name='price' placeholder='Enter the Cost of Item')
       #costErr.error
     
     .row

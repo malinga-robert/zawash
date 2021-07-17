@@ -9,7 +9,7 @@ head
   link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
   link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
-  //- link(rel="stylesheet", href="/styles.css", type="text/css")
+  //- link(rel="stylesheet", href="/inventory.css", type="text/css")
 // navbar
    
 nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
@@ -35,16 +35,25 @@ nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
         li.nav-item
           a.nav-link(href='/cartracking') CarTracking 
         li.nav-item
-          a.nav-link(href='/login') Login
+          a.nav-link(href='/register/manager') AddManager
         li.nav-item
           a.nav-link(href='/register') Register
+        li.nav-item
+          a.nav-link(href='/login') Login
+        li.nav-item
+          a.nav-link(href='/logout') Logout
+       
+       
 br
 br
 // Login form
 section
+  if alert == "error"
+    div.alert.alert-danger An error occurred, invalid username or password
   .container
     .row.d-flex.justify-content-center
       .col-sm-6.login-form
+        
         form.login(action='login' method='POST' name='login')
           h1 Zawash Login
           .form-group
@@ -58,11 +67,12 @@ section
             | Login
           br
           p
-            a(href='#') Forgot Password
-          button.btn.btn-danger(type='button') SignUp
-          br
-          p
-            a(href='#') Have No Account
+            a(href='/register/manager') Forgot Password
+          //- button.btn.btn-danger(type='submit' onclick='/register/manager') SignUp
+          //- a.btn.btn-danger(href='/register/manager') Signup
+          //- br
+          //- p
+          //-   a(href='#') Have No Account
 br
 br
 // Copyright mesaage

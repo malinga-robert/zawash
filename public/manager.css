@@ -3,18 +3,21 @@ body {
     background: gray;
     font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
+label{
+    color: black;
+}
 h2 {
     text-align: center;
     text-decoration: underline;
     color: blue;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 form {
     width: 400px;
     background: white;
-    padding: 15px 40px 40px;
+    padding: 5px 40px 20px;
     border: 1px solid #ccc;
-    margin: 100px auto 0;
+    margin: 50px auto 0;
     border-radius: 5px;
 }
 label {

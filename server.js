@@ -6,6 +6,8 @@ const loginRoutes = require('./routes/loginRoutes');
 const homeRoutes = require('./routes/homeRoutes');
 const iventoryRoutes = require('./routes/iventoryRoutes');
 const carRoutes = require('./routes/carRoutes');
+// const authRoutes = require('./routes/authRoutes');
+const Manager = require('./models/Manager');
 // const paymentRoutes = require('./routes/paymentRoutes');
 const reportRoutes = require('./routes/reportRoutes');
 const expressSession = require('express-session')({
@@ -54,12 +56,20 @@ app.locals.moment = moment
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressSession);
-// app.use(passport.initialize());
-// app.use(passport.session());
-// passport.use(Manager.createStrategy());
-// passport.serializeUser(Manager.serializeUser());
-// passport.deserializeUser(Manager.deserializeUser());
+app.use(passport.initialize());
+app.use(passport.session());
 
+passport.use(Manager.createStrategy());
+passport.serializeUser(Manager.serializeUser());
+passport.deserializeUser(Manager.deserializeUser());
+
+// var loginChecker = function (req, res, next) {
+//   if (req.path != '/login' && !req.session.user) {
+//     res.redirect('/login')
+//   }
+//   next()
+// }
+// app.use(loginChecker)
 
 
 // routes
@@ -71,10 +81,11 @@ app.use('/login', loginRoutes);
 app.use('/cartracking', carRoutes);
 //route for register form
 app.use('/register', registerRoutes);
+//route for authentification form
+// app.use('/', authRoutes);
 //route for iventory form
 app.use('/iventory', iventoryRoutes);
-//route for iventory form
-// app.use('/payout', paymentRoutes);
+
 //route for report form
 app.use('/report', reportRoutes);
 

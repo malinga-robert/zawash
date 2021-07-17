@@ -28,9 +28,9 @@ block content
             if expenses.length
                 each expense in expenses
                     tr
-                        td #{moment(expense.doe).format('DD-MM-YYYY')}
+                        td #{moment(expense.currentdate).format('DD-MM-YYYY')}
                         td #{expense.item}
-                        td #{expense.amount}
+                        td #{expense.price}
                 tr
                     th(colspan=2) Total Expenses
                     td #{new Intl.NumberFormat().format(total.totalExpense)}
