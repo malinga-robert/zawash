@@ -20,7 +20,8 @@ var nid = /^[(A-Z){3}(0-9a-zA-Z)]+$/
 var eid = /^[(zwash\.)?+[0-9]{4}]+$/
 
 
-var Validate =()=>{
+var Validate =(e)=>{
+    e.preventDefault();
     
     if(fullname.value ==''){
         fullname.style.border="1px solid red";

@@ -39,7 +39,7 @@ nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
         li.nav-item
           a.nav-link(href='/login') Login
         li.nav-item
-          a.nav-link(href='/logout') Logout 
+          a.nav-link(href='/login/logout') Logout 
 if alert == "success"
   div.alert.alert-success Manager added successfully!
 if alert == "error"
@@ -48,13 +48,9 @@ if alert == "error"
 form(name='contactForm' onsubmit='return validateForm()' action='/register/manager' method='post')
   h2 Manager Signup
   .row
-    label First Name
-    input#firsname(type='text' name='firstname')
+    label Full Names
+    input#fullname(type='text' name='fullname')
     #fnameErr.error
-  .row
-    label Last Name
-    input#secondname(type='text' name='lastname')
-    #snameErr.error
   .row
     label Email Address
     input#email(type='text' name='email')

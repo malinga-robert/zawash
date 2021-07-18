@@ -63,13 +63,13 @@ passport.use(Manager.createStrategy());
 passport.serializeUser(Manager.serializeUser());
 passport.deserializeUser(Manager.deserializeUser());
 
-// var loginChecker = function (req, res, next) {
-//   if (req.path != '/login' && !req.session.user) {
-//     res.redirect('/login')
-//   }
-//   next()
-// }
-// app.use(loginChecker)
+var loginChecker = function (req, res, next) {
+  if (req.path != '/login' && !req.session.user) {
+    res.redirect('/login')
+  }
+  next()
+}
+app.use(loginChecker)
 
 
 // routes
@@ -81,8 +81,7 @@ app.use('/login', loginRoutes);
 app.use('/cartracking', carRoutes);
 //route for register form
 app.use('/register', registerRoutes);
-//route for authentification form
-// app.use('/', authRoutes);
+
 //route for iventory form
 app.use('/iventory', iventoryRoutes);
 
