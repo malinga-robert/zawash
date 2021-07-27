@@ -1,0 +1,25 @@
+/* login stylling */
+
+body{
+    background: url('images/sample.png');
+    position: relative;
+    min-width: 100%;
+    /* min-height: 100%; */
+    /* height: 100vh; */
+    top: 0;
+    left: 0;
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+    z-index: -5
+}
+
+.nav-link{
+    color: white;
+    font-size: 18px;
+}
+.navbar-brand{
+    color: white;
+}
+
+

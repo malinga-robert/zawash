@@ -1,162 +1,126 @@
-doctype html
-head
-  meta(charset='utf-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
-  title ZAWASH
-  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
-  link(rel='stylesheet' href='/css/styles.css')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
-// navbar
-nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
-  h2.navbar-brand.brand-name
-    a(href='index.html')
-      img.img-responsive2(src='/images/logo.png')
-  a.navbar-brand(href='/')
-    strong ZAWASH
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-    span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto
-      li.nav-item.active
-        a.nav-link(href='/')
-          | Home
-          span.sr-only (current)
-      li.nav-item
-          a.nav-link(href='/report/payout') Dashboard    
-      li.nav-item
-      a.nav-link(href='/iventory') Iventory
-    .nav.navbar-nav.navbar-right
-      ul.nav.navbar-nav.navbar-right
-        li.nav-item
-          a.nav-link(href='/cartracking') CarTracking
-        li.nav-item
-          a.nav-link(href='/register/manager') AddManager
-        li.nav-item
-          a.nav-link(href='/register') Register 
-        li.nav-item
-          a.nav-link(href='/login') Login
-        li.nav-item
-          a.nav-link(href='/login/logout') Logout
-        
-// Washbay premise image
-center
-  img(src='/images/car wash bay.jpg' alt='' width='800px' height='400px')
-// jamboron text for pakages main title
-.container
-  .jamboron.text-center
-    h1(style='font: bolder;')
-      strong ZAWASH OFFERS THE BEST CAR WASH PACKAGES AROUND TOWN 
-    p
-      | At your convinience come and visit our premises and get your car washed by skilled and proffetional car washers.Are you in
-      | running out of time because of a planned meeeting?. Zawash can get your car washed at the quickest time posible. Check out packages bellow.
-// Small car wash package
-.container
-  .row
-    .col-sm-6.col-md-4
-      .card(style='width: 18rem;')
-        img.card-img-top(src='/images/sports_car_vector_291850.jpg' alt='...')
-        .card-body
-          h5.card-title SMALL CAR
-          p.card-text
-            | Small Car Wash Costs Ten Tousand shillings
-            span (10,000/=)
-          .btn-group
-            button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-              span.sr-only Toggle Dropdown
-              |                   Details
-            .dropdown-menu
-              a.dropdown-item(href='#' style='color: red;') package details
-              p(style='color: blue;')
-                | Under this category a car is considered small if its sitter capacity is 4 passengers and bellow
-    // Boda-Boda wash package
-    .col-sm-6.col-md-4
-      .card(style='width: 18rem;')
-        img.card-img-top(src='/images/bajaj.jpg' alt='...')
-        .card-body
-          h5.card-title BODA-BODA
-          p.card-text
-            | Boda-Boda Wash Costs Five Tousand shillings
-            span (5,000/=)
-          .btn-group
-            button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-              span.sr-only Toggle Dropdown
-              |                   Details
-            .dropdown-menu
-              a.dropdown-item(href='#' style='color: red;') Package details
-              p(style='color: blue;') Under this category all mottobikes are considered boda-boda
-              .dropdown-divider
-    // Medium-size carwash package
-    .col-sm-6.col-md-4
-      .card(style='width: 18rem;')
-        img.card-img-top(src='/images/taxi.jpg' alt='...')
-        .card-body
-          h5.card-title MEDIUM CARS
-          p.card-text
-            | Medium Car Wash Costs Fifteen Tousand shillings
-            span (15,000/=)
-          .btn-group
-            button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-              span.sr-only Toggle Dropdown
-              |                   Details
-            .dropdown-menu
-              a.dropdown-item(href='#' style='color: red;') Package details
-              p(style='color: blue;')
-                | Under this category sitter capacity is considered,this include any car with sitter capacity beyond 4 passengers
-              .dropdown-divider
-    // Engine wash package
+extends layout1 
+block content 
+    link(rel="stylesheet", href="/styles.css", type="text/css")
+    //-  Washbay premise image
+    center
+      img(src='/images/car wash bay.jpg' alt='' width='800px' height='400px')
+    //- jamboron text for pakages main title
+    .container
+      .jamboron.text-center
+        h1(style='font: bolder;')
+          strong ZAWASH OFFERS THE BEST CAR WASH PACKAGES AROUND TOWN 
+        p
+          | At your convinience come and visit our premises and get your car washed by skilled and proffetional car washers. 
+          | Zawash can get your car washed at the quickest time posible. Check out packages bellow.
+          | Zaabu Washing Bay (ZaWash) is found along Mawanda Road, Kampala. It employs youth in the areas of Kalerwe, Katanga among others. 
+          | For more information about booking and access <span> call tel: 0701232323, Email:"zawashbay@gmail.co.ug"
+    //-  Small car wash package
     .container
       .row
         .col-sm-6.col-md-4
           .card(style='width: 18rem;')
-            img.card-img-top(src='/images/engine.jpg' alt='...')
+            img.card-img-top(src='/images/sports_car_vector_291850.jpg' alt='...')
             .card-body
-              h5.card-title ENGINE
+              h5.card-title SMALL CAR
               p.card-text
-                | Engine Wash Costs Ten Tousand shillings
+                | Small Car Wash Costs Ten Tousand shillings
                 span (10,000/=)
               .btn-group
                 button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
                   span.sr-only Toggle Dropdown
-                  |                       Details
+                  |                   Details
                 .dropdown-menu
-                  a.dropdown-item(href='#' style='color: red;') Package details
-                  p(style='color:blue;')
-                    | All vihecle engines are categorized in this package,whether small,medium,big or motorbikes
-                  .dropdown-divider
-        // zawash image illustration
-        .col-sm-6.col-md-4
-          img(src='/images/wash cartoon.jpg' alt='' width='350' height='300')
-        // fullwash pakage card
+                  a.dropdown-item(href='#' style='color: red;') package details
+                  p(style='color: blue;')
+                    | Under this category a car is considered small if its sitter capacity is 4 passengers and bellow
+        //- Boda-Boda wash package
         .col-sm-6.col-md-4
           .card(style='width: 18rem;')
-            img.card-img-top(src='/images/full wash.jpg' alt='...')
+            img.card-img-top(src='/images/bajaj.jpg' alt='...')
             .card-body
-              h5.card-title FULL WASH
+              h5.card-title BODA-BODA
               p.card-text
-                | A Full Wash Costs Twenty Tousand shillings
-                span (20,000/=)
-            .button
+                | Boda-Boda Wash Costs Five Tousand shillings
+                span (5,000/=)
               .btn-group
-                button.btn.btn-primary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-                  | Details
+                button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                  span.sr-only Toggle Dropdown
+                  |                   Details
+                .dropdown-menu
+                  a.dropdown-item(href='#' style='color: red;') Package details
+                  p(style='color: blue;') Under this category all mottobikes are considered boda-boda
+                  .dropdown-divider
+        //-  Medium-size carwash package
+        .col-sm-6.col-md-4
+          .card(style='width: 18rem;')
+            img.card-img-top(src='/images/taxi.jpg' alt='...')
+            .card-body
+              h5.card-title MEDIUM CARS
+              p.card-text
+                | Medium Car Wash Costs Fifteen Tousand shillings
+                span (15,000/=)
+              .btn-group
+                button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                  span.sr-only Toggle Dropdown
+                  |                   Details
                 .dropdown-menu
                   a.dropdown-item(href='#' style='color: red;') Package details
                   p(style='color: blue;')
-                    | Under this category vehecles or motorbikes are washed in full including external and internal parts e.g engine
+                    | Under this category sitter capacity is considered,this include any car with sitter capacity beyond 4 passengers
                   .dropdown-divider
-  // demonstration images during work hours
-  .container
-    .row
-      .col-md-6
-        img(src='/images/washing team2.png' alt='' width='500' height='300')
-      .col-md-5
-        img(src='/images/wash1.png' alt='' width='500' height='300')
-  br
-  br
-  // footer Copyright message
-  footer.bg-light.text-center.text-lg-start
-    .text-center.p-3(style='background-color: black;')
-      | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by Malinga Robert
-  script(src='css/jquery-3.6.0.js')
-  script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')
+        //-  Engine wash package
+        .container
+          .row
+            .col-sm-6.col-md-4
+              .card(style='width: 18rem;')
+                img.card-img-top(src='/images/engine.jpg' alt='...')
+                .card-body
+                  h5.card-title ENGINE
+                  p.card-text
+                    | Engine Wash Costs Ten Tousand shillings
+                    span (10,000/=)
+                  .btn-group
+                    button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                      span.sr-only Toggle Dropdown
+                      |                       Details
+                    .dropdown-menu
+                      a.dropdown-item(href='#' style='color: red;') Package details
+                      p(style='color:blue;')
+                        | All vihecle engines are categorized in this package,whether small,medium,big or motorbikes
+                      .dropdown-divider
+            //- zawash image illustration
+            .col-sm-6.col-md-4
+              img(src='/images/wash cartoon.jpg' alt='' width='350' height='300')
+            //- // fullwash pakage card
+            .col-sm-6.col-md-4
+              .card(style='width: 18rem;')
+                img.card-img-top(src='/images/full wash.jpg' alt='...')
+                .card-body
+                  h5.card-title FULL WASH
+                  p.card-text
+                    | A Full Wash Costs Twenty Tousand shillings
+                    span (20,000/=)
+                .button
+                  .btn-group
+                    button.btn.btn-primary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                      | Details
+                    .dropdown-menu
+                      a.dropdown-item(href='#' style='color: red;') Package details
+                      p(style='color: blue;')
+                        | Under this category vehecles or motorbikes are washed in full including external and internal parts e.g engine
+                      .dropdown-divider
+      //- demonstration images during work hours
+      .container
+        .row
+          .col-md-6
+            img(src='/images/washing team2.png' alt='' width='500' height='300')
+          .col-md-5
+            img(src='/images/wash1.png' alt='' width='500' height='300')
+      br
+      br
+      //-footer Copyright message
+      footer.bg-light.text-center.text-lg-start
+        .text-center.p-3(style='background-color: black;')
+          | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by Malinga Robert
+      script(src='css/jquery-3.6.0.js')
+      script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')

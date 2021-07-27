@@ -32,7 +32,7 @@ const moment = require('moment');
 const app = express()
 
 // mongodb connection
-//DATABASE1=mongodb://localhost:27017/corhot-0008
+//DATABASE=mongodb://localhost:27017/corhot-0008
 mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -64,7 +64,7 @@ passport.serializeUser(Manager.serializeUser());
 passport.deserializeUser(Manager.deserializeUser());
 
 var loginChecker = function (req, res, next) {
-  if (req.path != '/login' && !req.session.user) {
+  if (req.path != '/login' && req.path != '/'  && !req.session.user) {
     res.redirect('/login')
   }
   next()

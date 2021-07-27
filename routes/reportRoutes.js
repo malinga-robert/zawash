@@ -64,6 +64,7 @@ router.get('/expenses-report', async (req, res) => {
 
 router.get('/collection', async (req, res) => {
     try {
+        // searching by date to get collectin details
         let selectedDate = moment().format('YYYY-MM-DD')
         if (req.query.searchdate)
             selectedDate = moment(req.query.searchdate).format('YYYY-MM-DD')

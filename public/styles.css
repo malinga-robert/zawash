@@ -1,22 +1,4 @@
 
-.table{
-    border: grey;
-    width: 700px;
-    /* padding-top: 50px; */
-    margin-bottom: 70px;
-    float: center;
-}
-.card-header{
-    width: 700px;
-    align-self: center;
-    background-color: grey;
-}
-#nav-tab.nav.nav-tabs{
-    width: 800px;
-}
-.search{
-    width: 700px;
-}
 
 p {
     color: black;
@@ -25,6 +7,7 @@ p {
 
 nav{
     font-style: color white;
+    font-size: 18px;
     
 }
 h5{
@@ -92,33 +75,14 @@ span{
     text-align: left;
     margin-bottom: 2px;
 }
-.gender{
-float: left;
-color: black;
-position: relative;
-padding-top: 8px;
-}
+
 
 .val_error{
     color: red;
     position: relative;
     float: left;
 }
-#nationalid_error{
-    position: relative;
-    margin-top:  -20px;
-    margin-bottom: 20px;
-}
-#dateofbirth_error{
-    position: relative;
-    margin-top:  -20px;
-    margin-bottom: 20px;
-}
-#gender_error{
-    position: relative;
-    margin-top: -15px;
-    margin-bottom: 20px;
-}
+
 .carreg{
    margin-top: 80px;
    border: 1px solid grey;
@@ -153,16 +117,4 @@ padding-top: 8px;
     font-size: 18px;
     color: blue;
 }
-.hat{
-    border: 1px solid brown;
-    width: 600px;
-    padding-bottom: 20px;
-    margin-top: 50px;
-}
-
-::placeholder.border{
-    border: black;
-    color: black;
-}
-
 

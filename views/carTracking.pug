@@ -1,142 +1,73 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title=title 
-  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
-  link(rel='stylesheet' href='/css/styles.css')
-  link(rel="stylesheet", href="/styles.css", type="text/css")
-nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
-  h2.navbar-brand.brand-name
-    a(href='/')
-      img.img-responsive2(src='/images/logo.png')
-  a.navbar-brand(href='/')
-    strong ZAWASH
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-    span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto
-      li.nav-item.active
-        a.nav-link(href='/')
-          | Home
-          span.sr-only (current)
-      li.nav-item
-          a.nav-link(href='/report/payout') Dashboard 
-      li.nav-item
-      a.nav-link(href='/iventory') Iventory
-    .nav.navbar-nav.navbar-right
-      ul.nav.navbar-nav.navbar-right
-        li.nav-item
-          a.nav-link(href='/cartracking') CarTracking
-        li.nav-item
-          a.nav-link(href='/register/manager') AddManager
-        li.nav-item
-          a.nav-link(href='/register') Register
-        li.nav-item
-          a.nav-link(href='/login') Login
-        li.nav-item
-          a.nav-link(href='/login/logout') Logout
-        
-center
-  if alert =='success'
-    div.alert.alert-success Vehicle information added successfully
-  if alert =='error'
-    div.alert.alert-danger An error occured, failed to add information
-  form.carreg(action='cartracking' method='POST' name='carreg' onsubmit='return Validate();')
-    h1 Car Registration
+extends layout1 
+block content 
+    link(rel="stylesheet", href="/reg.css", type="text/css")
     .container
-      .row.d-flex.justify-content-center
-        .col-mg
-          .form-group.mr-2
-            label.sr-only(for='inputNumberplate') Numberplate
-            #numberplateErr.error
-            input#inputNumberplate.form-control(type='text' name='numberplate' placeholder='Enter NumberPlate')
+      center
+        if alert =='success'
+            div.alert.alert-success Vehicle information added successfully
+        if alert =='error'
+            div.alert.alert-danger An error occured, failed to add information
+        form.reg(action='cartracking' method='POST' name='carreg' onsubmit='return Validate();')
+          h1 Car Wash Tracking
+          .row
+            .col-md-6
+              label Number Plate 
+              input.form-control(type='text' name='numberplate' placeholder='Enter NumberPlate')
+              #numberplateErr.error
+            .col-md-6
+              label Time
+              input.form-control(type='text' name='toa' placeholder='Time Of Arrival' onclick="this.type='time'")
+              #timeErr.error
+          .row
+            .col-md-6
+              label Car Make
+              input.form-control(type='text' name='make' placeholder='Enter Car Make')
+              #makeErr.error
+            .col-md-6
+              label Car Color
+              input.form-control(type='text' name='color' placeholder='Enter Car Color')
+              #colorErr.error
+          .row
+            .col-md-6
+              label(for='dateofArrival') Date of Arrival
+              input#doa.form-control(type='text' name='doa' placeholder='Enter Date Of Arrival' onclick="this.type='date'")
+              #dateErr.error
+            .col-md-6
+              label(for='CarType') Car Type
+              input.form-control(type='text' name='type' placeholder='Enter Car Type')
+              #typeErr.error
+          .row
+            .col-md-6
+              label Washers
+              select#washers.form-control(name='washer')
+                option(value='' selected='' disabled='') --------Washers-------
+                each washer in washers 
+                  option(value=washer._id) #{washer.fullname}
+                option(value='Kato Mark') Kato Mark
+                option(value='Medi Ali') Medi Ali
+                option(value='Opio Paul') Opio Paul
+              #asignErr.error        
+            .col-md-6
+              label Packages 
+              select#Package.form-control(name='package')
+                option(value='' selected='' disabled='') -------Select A Package----------
+                option(value='smallcars') Small Car(10000/=)
+                option(value='medium') Medium Car(15000/=)
+                option(value='fullwash') Full Wash(20000/=)
+                option(value='bodaboda') Boda-Boda(5000/=)
+                option(value='engine') Engine(10000/=)
+              #packageErr.error
           br
-          .form-group.mr-2
-            label.sr-only(for='inputColor') Color
-            #colorErr.error
-            input#inputColor.form-control(type='text' name='color' placeholder='Enter Car Color')
-        .col-mg
-          .form-group.mr-2
-            label.sr-only(for='inputTime') timeOfArrival
-            #timeErr.error
-            input#inputTime.form-control(type='text' name='toa' placeholder='Time of Arrival' onclick="(this.type='Time')")
-          br
-          .form-group.mr-2
-            label.sr-only(for='inputDate') Date
-            #dateErr.error
-            input#inputColor.form-control(type='text' name='doa' placeholder='Enter Date' onclick="(this.type='Date')")
-        .col-mg
-          .form-group.mr-2
-            label.sr-only(for='inputMake') Make
-            #makeErr.error
-            input#inputMake.form-control(type='text' name='make' placeholder='Enter Car Make')
-          br
-          .form-group.mr-2
-            label.sr-only(for='inputType') Type
-            #typeErr.error
-            input#inputType.form-control(type='text' name='type' placeholder='Enter Car Type')
-      p
-        strong Asign Washers
-      .row.d-flex.justify-content-center
-        #asign.form-group.mr-2
-          label(for='inputColor')
-          #asignErr.error
-          select#washers.form-control(name='washer')
-            option(value='' selected='' disabled='') --Washers--
-            each washer in washers 
-              option(value=washer._id) #{washer.fullname}
-            option(value='Kato Mark') Kato Mark
-            option(value='Medi Ali') Medi Ali
-            option(value='Opio Paul') Opio Paul
-        //- .form-group.mr-2
-        //-   label.sr-only(for='inputColor') Asign Washers:
-        //-   select#Washers.form-control(name='Washers')
-        //-     option(value='' selected='' disabled='') --Washers--
-        //-     option(value='Kato Mark') Kato Mark
-        //-     option(value='Medi Ali') Medi Ali
-        //-     option(value='Opio Paul') Opio Paul
-        //- .form-group.mr-2
-        //-   label.sr-only(for='inputColor') Asign Washers:
-        //-   select#Washers.form-control(name='Washers')
-        //-     option(value='' selected='' disabled='') --Washers--
-        //-     option(value='0') Kato Mark
-        //-     option(value='1') Medi Ali
-        //-     option(value='2') Opio Paul
-      .row.d-flex.justify-content-center
-        .form-group.mr-2
-          label(for='inputPackage')
-            strong Packages
-          #packageErr.error
-          select#Packages.form-control(name='package')
-            option(value='' selected='' disabled='') -----------Select A Package----------
-            option(value='smallcars') (Asign 1 washer)Small Car(10000/=)
-            option(value='medium') (Asign 2 washers)Medium Car(15000/=)
-            option(value='fullwash') (Asign 3 washers)Full Wash(20000/=)
-            option(value='bodaboda') Boda-Boda(5000/=)
-            option(value='engine') Engine(10000/=)
-        .form-group.mr-2
-          label(for='inputColor')
-            strong Amount Due
-          #paymentErr.error
-          select#payment.form-control(name='payment')
-            option(value='' selected='' disabled='') ---Select the amount due---
-            option(value='SmallCar') Small Car wash(3000/=)
-            option(value='MediumCar') Medium Car Wash(4000/=)
-            option(value='Boda-Boda') Boda-Boda(1500/=)
-      br
-      button.form-control.btn.btn-primary(type="submit")
-        | submit
-br
-br
-// footer copyright message
-footer.bg-light.text-center.text-lg-start
-  .text-center.p-3(style='background-color: black; color: white')
-    | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by
-    | Malinga Robert
-script(src='/css/jquery-3.6.0.js')
-script(src='/css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')
-script(src='/carRegister.js')
+          .row
+            .col-md-12
+              button.btn.btn-primary.btn-block(type='submit') Register
+    br
+    br
+    // footer Copyright message
+    footer.bg-light.text-center.text-lg-start
+      .text-center.p-3(style='background-color: black;')
+        | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by Malinga Robert
+    script(src='css/jquery-3.6.0.js')
+    script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')
+    script(src='/carRegister.js')
+        

@@ -23,6 +23,10 @@ block content
                 tr
                     th Date of Arrival
                     th Vehicle
+                    th Color 
+                    th Make 
+                    th Type 
+                    //- th Washer
                     th Amount
             tbody
             if collections.length
@@ -30,7 +34,11 @@ block content
                     tr
                         td #{moment(collection.datetimeArrival).format('DD-MM-YYYY hh:mm')}
                         td #{collection.numberplate}
+                        td #{collection.color}
+                        td #{collection.make}
+                        td #{collection.type}
+                        //- td #{collection.washer}
                         td #{collection.packagePrice}
                 tr
-                    th(colspan=2) Total Collections
+                    th(colspan=5) Total Collections
                     td #{new Intl.NumberFormat().format(total.totalCollection)}

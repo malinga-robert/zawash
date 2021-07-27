@@ -39,6 +39,6 @@ const vehicleSchema = new mongoose.Schema({
   }, 
  washerFee: {
   type: Number,
- },
+ }
 });
 module.exports = mongoose.model('Vehicle', vehicleSchema);

@@ -1,77 +1,41 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Register Manager
-  link(rel='stylesheet' href='/public/manager.css')
-  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
-  link(rel='stylesheet' href='/css/styles.css')
-  link(rel="stylesheet", href="/manager.css", type="text/css")
-nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
-  h2.navbar-brand.brand-name
-    a(href='index.html')
-      img.img-responsive2(src='/images/logo.png')
-  a.navbar-brand(href='/')
-    strong ZAWASH
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-    span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto
-      li.nav-item.active
-        a.nav-link(href='/')
-          | Home
-          span.sr-only (current)
-      li.nav-item
-          a.nav-link(href='/report/payout') Dashboard    
-      li.nav-item
-      a.nav-link(href='/iventory') Iventory
-    .nav.navbar-nav.navbar-right
-      ul.nav.navbar-nav.navbar-right
-        li.nav-item
-          a.nav-link(href='/cartracking') CarTracking
-        li.nav-item
-          a.nav-link(href='/register/manager') AddManager
-        li.nav-item
-          a.nav-link(href='/register') Register 
-        li.nav-item
-          a.nav-link(href='/login') Login
-        li.nav-item
-          a.nav-link(href='/login/logout') Logout 
-if alert == "success"
-  div.alert.alert-success Manager added successfully!
-if alert == "error"
-  div.alert.alert-danger An error occurred, failed to add manager           
+extends layout1 
+block content 
+    link(rel="stylesheet", href="/manager.css", type="text/css")
+      //-  success and error alert message
+    if alert == "success"
+      div.alert.alert-success Manager added successfully!
+    if alert == "error"
+      div.alert.alert-danger An error occurred, failed to add manager           
 
-form(name='contactForm' onsubmit='return validateForm()' action='/register/manager' method='post')
-  h2 Manager Signup
-  .row
-    label Full Names
-    input#fullname(type='text' name='fullname')
-    #fnameErr.error
-  .row
-    label Email Address
-    input#email(type='text' name='email')
-    #emailErr.error
-  .row
-    label Mobile Number
-    input#number(type='number' name='phoneNumber')
-    #mobileErr.error
-  .row
-    label Enter Password
-    input#password(type='password' name='password')
-    #passErr.error
-  .row
-    input(type='submit' value='Submit')
-br
-br
+    form(name='addManager' onsubmit='return Validate();' action='/register/manager' method='post')
+      h2 Manager Signup
+      .row
+        label Full Names
+        input#fullname(type='text' name='fullname')
+        #fnameErr.error
+      .row
+        label Email Address
+        input#email(type='text' name='username')
+        #emailErr.error
+      .row
+        label Mobile Number
+        input#number(type='number' name='phoneNumber')
+        #mobileErr.error
+      .row
+        label Enter Password
+        input#password(type='password' name='password')
+        #passErr.error
+      .row
+        button.form-control.btn.btn-primary(type='submit')
+          | submit
+    br
+    br
 
-// footer copyright message
-footer.bg-light.text-center.text-lg-start
-  .text-center.p-3(style='background-color: black; color: white')
-    | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by
-    | Malinga Robert
-script(src='css/jquery-3.6.0.js')
-script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')
+    // footer copyright message
+    footer.bg-light.text-center.text-lg-start
+      .text-center.p-3(style='background-color: black; color: white')
+        | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by
+        | Malinga Robert
+    script(src='css/jquery-3.6.0.js')
+    script(src='./man.js')
+    script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')

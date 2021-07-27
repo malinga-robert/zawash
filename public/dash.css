@@ -1,0 +1,36 @@
+
+/* dashboard stylling */
+
+.table{
+    border: grey;
+    width: 600px;
+    /* padding-top: 50px; */
+    margin-bottom: 70px;
+    float: center;
+    
+}
+tr{
+    background-color: lightblue;
+}
+th{
+    background-color: rosybrown;
+}
+.card-body{
+    width: 700px;
+    align-self: center;
+    background-color: grey;
+    padding-left: 30px;
+    margin-top: 70px;
+}
+#nav-tab.nav.nav-tabs{
+    width: 600px;
+    border: 800px;
+}
+.search{
+    width: 600px;
+}
+nav{
+    font-style: color white;
+    font-size: 18px;
+}
+

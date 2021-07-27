@@ -1,86 +1,52 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Register
-  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
-  link(rel='stylesheet' href='/css/styles.css')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
-  link(rel="stylesheet", href="/styles.css", type="text/css")
-nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
-  h2.navbar-brand.brand-name
-    a(href='index.html')
-      img.img-responsive2(src='/images/logo.png')
-  a.navbar-brand(href='/')
-    strong ZAWASH
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-    span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto
-      li.nav-item.active
-        a.nav-link(href='/')
-          | Home
-          span.sr-only (current)
-      li.nav-item
-          a.nav-link(href='/report/payout') Dashboard 
-      li.nav-item
-      a.nav-link(href='/iventory') Iventory
-    .nav.navbar-nav.navbar-right
-      ul.nav.navbar-nav.navbar-right
-        li.nav-item
-          a.nav-link(href='/cartracking') CarTracking
-        li.nav-item
-          a.nav-link(href='/register/manager') AddManager
-        li.nav-item
-          a.nav-link(href='/register') Register
-        li.nav-item
-          a.nav-link(href='/login') Login
-        li.nav-item
-          a.nav-link(href='/login/logout') Logout 
-        
-center
-  .Register
-    if alert =='success'
-      div.alert.alert-success Washer information added successfully
-    if alert =='error'
-      div.alert.alert-danger An error occured, failed to add information
+extends layout1 
+block content
+    link(rel="stylesheet", href="/styles.css", type="text/css")
+    link(rel="stylesheet", href="/reg.css", type="text/css")
+    center
+      .Register
+        //-  success and error alert message
+        if alert =='success'
+          div.alert.alert-success Washer information added successfully
+        if alert =='error'
+          div.alert.alert-danger An error occured, failed to add information
 
-    form.regform(action='register' method='POST' name='register-form' onsubmit='return Validate();')
-      h1 Register Washer Here
-      input#fullname.form-control(type='text' name='fullname' placeholder='Enter Your Fullnames')
-      #name_error.val_error
-        br
-        select#Packages.form-control(name='gender')
-              option(value='' selected='' disabled='') --Select Gender--
-              option(value='male') Male
-              option(value='female') Female
-        #gender_error.val_error
-        br  
-      .dob
-        input#dateofbirth.form-control(type='text' name='dateofbirth' placeholder='Date Of Birth' onclick="(this.type='Date')")
-        br
-        #dateofbirth_error.val_error
-      .nID
-        input#nationalid.form-control(type='text' name='nationalid' placeholder='NationalID NIN')
-        br
-        #nationalid_error.val_error
-      .residence
-        input#residence.form-control(type='text' name='residence' placeholder='Enter Place Of Residence')
-        #residence_error.val_error
-      .EmployeeID
-        p EmployeeID
-        input#employeeid.form-control(type='text' name='employeeid' placeholder="EmployeeID 'ZWASH-3-7-9'")
-        #employeeid_error.val_error
-      br
-      button.form-control.btn.btn-primary(type='submit')
-        | submit
-// footer copyright message
-footer.bg-light.text-center.text-lg-start
-  .text-center.p-3(style='background-color: black; color: white')
-    | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by
-    | Malinga Robert
-script(src='css/jquery-3.6.0.js')
-script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')
-script(src='/register.js')
+        form.regform(action='register' method='POST' name='register-form' onsubmit='return Validate();')
+          h1 Register Washer Here
+          input#fullname.form-control(type='text' name='fullname' placeholder='Enter Your Fullnames')
+          #name_error.val_error
+          br
+          select#gender(name="gender").form-control
+                option(value='' selected='' disabled='') --Select Gender--
+                option(value='male') Male
+                option(value='female') Female
+          #gender_error.val_error
+          br  
+          .dob
+            input#dateofbirth.form-control(type='text' name='dateofbirth' max='2003-12-01'  placeholder='Date Of Birth' onfocus="(this.type='date')")
+            #dateofbirth_error.val_error
+          br
+          .nID
+            input#nationalid.form-control(type='text' name='nationalid' placeholder='NationalID NIN')
+            #nationalid_error.val_error
+          br
+          .residence
+            input#residence.form-control(type='text' name='residence' placeholder='Enter Place Of Residence')
+            #residence_error.val_error
+          br
+          .EmployeeID
+            //- p EmployeeID
+            input#employeeid.form-control(type='text' name='employeeid' placeholder="EmployeeID-(ZWASH379)")
+            #employeeid_error.val_error
+          br
+          button.form-control.btn.btn-primary(type='submit')
+            | submit
+    //-  footer copyright message
+    footer.bg-light.text-center.text-lg-start
+      .text-center.p-3(style='background-color: black; color: white')
+        | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by
+        | Malinga Robert
+    script(src='css/jquery-3.6.0.js')
+    script(src='/reg.js')
+    script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')
+
+

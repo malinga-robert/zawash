@@ -1,85 +1,43 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Login Form
-  link(rel='stylesheet' href='css/styles.css')
-  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
-  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
-  //- link(rel="stylesheet", href="/inventory.css", type="text/css")
-// navbar
-   
-nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
-  h2.navbar-brand.brand-name
-    a(href='index.html')
-      img.img-responsive2(src='/images/logo.png')
-  a.navbar-brand(href='/')
-    strong ZAWASH
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-    span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto
-      li.nav-item.active
-        a.nav-link(href='/')
-          | Home
-          span.sr-only (current)
-      li.nav-item
-          a.nav-link(href='/report/payout') Dashboard     
-      li.nav-item
-      a.nav-link(href='/iventory') Iventory
-    .nav.navbar-nav.navbar-right
-      ul.nav.navbar-nav.navbar-right
-        li.nav-item
-          a.nav-link(href='/cartracking') CarTracking 
-        li.nav-item
-          a.nav-link(href='/register/manager') AddManager
-        li.nav-item
-          a.nav-link(href='/register') Register
-        li.nav-item
-          a.nav-link(href='/login') Login
-        li.nav-item
-          a.nav-link(href='/logout') Logout
-       
-       
-br
-br
-// Login form
-section
-  if alert == "error"
-    div.alert.alert-danger An error occurred, invalid username or password
-  .container
-    .row.d-flex.justify-content-center
-      .col-sm-6.login-form
-        
-        form.login(action='login' method='POST' name='login')
-          h1 Zawash Login
-          .form-group
-            label(for='inputUsername') Username
-            input#username.form-control(type='text' name='email' placeholder='Enter Email' required='' minlength='8')
-          .form-group
-            label(for='inputPassword') Password
-            input#password.form-control(type='password' name='password' placeholder='Enter Password')
-            span#errorpassword
-          button.btn.btn-primary(onclick='validation()' name='login' style='width: 395px')
-            | Login
-          br
-          p
-            a(href='/register/manager') Forgot Password
-          //- button.btn.btn-danger(type='submit' onclick='/register/manager') SignUp
-          //- a.btn.btn-danger(href='/register/manager') Signup
-          //- br
-          //- p
-          //-   a(href='#') Have No Account
-br
-br
-// Copyright mesaage
-footer.bg-light.text-center.text-lg-start
-  .text-center.p-3(style='background-color: black; color: white')
-    | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by
-    | Malinga Robert
-script(src='css/jquery-3.6.0.js')
-script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')
-script(src='/signin.js')
+extends layout2 
+block content 
+ 
+
+    br
+    br
+    // Login form
+    section
+      if alert == "error"
+        div.alert.alert-danger An error occurred, invalid username or password
+      .container
+        .row.d-flex.justify-content-center
+          .col-sm-6.login-form
+            
+            form.login(action='login' method='POST' name='login')
+              h1 Zawash Login
+              .form-group
+                label(for='inputUsername') Username
+                input#username.form-control(type='text' name='username' placeholder='Enter Email' required='' minlength='8')
+              .form-group
+                label(for='inputPassword') Password
+                input#password.form-control(type='password' name='password' placeholder='Enter Password')
+                span#errorpassword
+              button.btn.btn-primary(onclick='validation()' name='login' style='width: 395px')
+                | Login
+              br
+              p
+                a(href='/register/manager') Forgot Password
+              //- button.btn.btn-danger(type='submit' onclick='/register/manager') SignUp
+              //- a.btn.btn-danger(href='/register/manager') Signup
+              //- br
+              //- p
+              //-   a(href='#') Have No Account
+    br
+    br
+    //-  Copyright mesaage
+    footer.bg-light.text-center.text-lg-start
+      .text-center.p-3(style='background-color: black; color: white')
+        | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by
+        | Malinga Robert
+    script(src='css/jquery-3.6.0.js')
+    script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')
+    script(src='/signin.js')

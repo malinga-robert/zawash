@@ -1,14 +1,15 @@
+// accessing elements by id
 var numberplate = document.forms["carreg"]["numberplate"];
-var time = document.forms["carreg"]["time"];
-var date = document.forms["carreg"]["date"];
-var Make = document.forms["carreg"]["Make"];
-var Type = document.forms["carreg"]["Type"];
-var washers = document.forms["carreg"]["washers"];
-var payment = document.forms["carreg"]["payment"];
-var Color = document.getElementById('Color');
-var packages = document.forms["carreg"]["packages"];
+var toa = document.forms["carreg"]["toa"];
+var doa = document.forms["carreg"]["doa"];
+var make = document.forms["carreg"]["make"];
+var type = document.forms["carreg"]["type"];
+var washer = document.forms["carreg"]["washer"];
+var color = document.forms["carreg"]["color"];
+// var inputColor = document.getElementById('inputColor');
+var package = document.forms["carreg"]["package"];
 
-
+// accessing error elements by id
 var numberplateErr = document.getElementById('numberplateErr');
 var timeErr = document.getElementById('timeErr');
 var colorErr = document.getElementById('colorErr');
@@ -16,114 +17,104 @@ var dateErr = document.getElementById('dateErr');
 var typeErr = document.getElementById('typeErr');
 var makeErr = document.getElementById('makeErr');
 var asignErr = document.getElementById('asignErr');
-var paymentErr = document.getElementById('paymentErr');
+// var paymentErr = document.getElementById('paymentErr');
 var packageErr = document.getElementById('packageErr');
 
-var numplate = /^[(a-zA-Z){3}][(0-9a-zA-Z){7}]+$/;
+// regular expresion for numberplate
+var numplate = /^([A-Z]{3}.*[\s\.]*[0-9]{3}[A-Z]{1})$/;
 
-// numberplate.addEventListener('input',checkNumberplateField =()=>{
+
+
  var Validate = ()=>{   
-    if(inputNumberplate.value ==''){
-        inputNumberplate.style.border="1px solid red";
+    // validating numperplate
+    if(numberplate.value ==''){
+        numberplate.style.border="1px solid red";
         numberplateErr.textContent = "Numberplate should be filled";
-        // inputNumberplate.focus();
-    }else if(inputNumberplate.value.match(numplate)){
-        inputNumberplate.style.border="1px solid red";
-        numberplateErr.textContent = "Must Start with 3 letters followed by 7 alphanumeric";
+        return false;
+    }else if(!(numberplate.value.match(numplate))){
+        numberplate.style.border="1px solid red";
+        numberplateErr.textContent = "Must Start with 3 letters and by 4 alphanumeric";
+        return false;
     }else{
-        inputNumberplate.style.border="1px solid green";
-        inputNumberplate.focus();
-        // return false;
+        numberplate.style.border="1px solid green";
+        numberplateErr.textContent = "";
+        numberplate.focus();
     }
-    if(time.value ==''){
-        time.style.border="1px solid red";
+    // validating time of arrival
+    if(toa.value ==''){
+        toa.style.border="1px solid red";
         timeErr.textContent = "Time should be filled";
-        // time.focus(); 
+        return false;
     }else{
-        time.style.border="1px solid green";
-        time.focus();
-        // return false;
+        toa.style.border="1px solid green";
+        timeErr.textContent = "";
+        toa.focus();
     }
-
-    if(inputMake.value ==''){
-        inputMake.style.border="1px solid red";
+    // validating car make
+    if(make.value ==''){
+        make.style.border="1px solid red";
         makeErr.textContent = "Make should be filled";
-        // inputMake.focus(); 
+        return false;
     }else{
-        inputMake.style.border="1px solid green";
-        inputMake.focus();
-        // return false;
+        make.style.border="1px solid green";
+        makeErr.textContent = "";
+        make.focus();
     }
-
-    if(inputColor.value ==''){
-        inputColor.style.border="1px solid red";
+    // validating color
+    if(color.value ==''){
+        color.style.border="1px solid red";
         colorErr.textContent = "Color should be filled";
-        // inputColor.focus(); 
+        return false;
     }else{
-        inputColor.style.border="1px solid green";
-        inputColor.focus();
-        // return false;
+        color.style.border="1px solid green";
+        colorErr.textContent = "";
+        color.focus();
     }
 
-
-    if(date.value ==''){
-        date.style.border="1px solid red";
+    // validating date of arrival
+    if(doa.value ==''){
+        doa.style.border="1px solid red";
         dateErr.textContent = "Date should be filled";
-        // date.focus(); 
+        return false; 
     }else{
-        date.style.border="1px solid green";
-        date.focus();
-        // return false;
+        doa.style.border="1px solid green";
+        dateErr.textContent = "";
+        doa.focus();
     }
     
-    
-    if(inputType.value ==''){
-        inputType.style.border="1px solid red";
+    // validating car type
+    if(type.value ==''){
+        type.style.border="1px solid red";
         typeErr.textContent = "Type should be filled";
-        // inputType.focus(); 
+        return false;
     }else{
-        inputType.style.border="1px solid green";
-        inputType.focus();
-        // return false;
+        type.style.border="1px solid green";
+        typeErr.textContent = "";
+        type.focus();
     }
 
-    if(this.washers.value==""){
+    // validating washer
+    if(this.washer.value==""){
+        washer.style.border="1px solid red";
         asignErr.textContent = "Atleast a Washer must be assigned";
-        // this.Washers.focus();
-        // return false;
+       return false;
+    }else{
+        washer.style.border="1px solid green";
+        asignErr.textContent = "";
+        washer.focus();
     }
-
-    if(this.packages.value==""){
+    
+    // validating package
+    if(this.package.value==""){
+        package.style.border="1px solid red";
         packageErr.textContent = "Atleast a package must be selected";
-        // this.packages.focus();
-        // return false;
+       return false;
+    }else{
+        package.style.border="1px solid green";
+        packageErr.textContent = "";
+        package.focus();
     }
-    if(this.payment.value==""){
-        paymentErr.textContent = "A payment package must be selected";
-        // this.packages.focus();
-        // return false;
-    }
-    
-    
    
-    // if(Washers.value ==''){
-    //     Washers.style.border="2px solid red";
-    //     asignErr.textContent = "Atleat a Washer should be asigned"
-    //     Washers.focus(); 
-    // }else{
-    //     Washers.style.border="1px solid green";
-    //     Washers.focus();
-    //     return false;
-    // }
-    // if(Payment.value ==''){
-    //     Payment.style.border="2px solid red";
-    //     paymentErr.textContent = "Select a Payment pakage"
-    //     Payment.focus(); 
-    // }else{
-    //     Payment.style.border="2px solid green";
-    //     Payment.focus();
-    //     return false;
-    // }
-
 }        
    
+// numberplate.addEventListener('input',checkNumberplateField =()=>{

@@ -1,83 +1,46 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title=title 
-  link(rel='stylesheet' href='/iventory.css')
-  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap.css')
-  link(rel='stylesheet' href='/css/styles.css')
-  link(rel='stylesheet' href='/css/bootstrap-4.6.0-dist/css/bootstrap-grid.css')
-  link(rel="stylesheet", href="/iventory.css", type="text/css")
-// navbar
-nav.navbar.navbar-expand-lg.navbar-dack.bg-danger
-  h2.navbar-brand.brand-name
-    a(href='index.html')
-      img.img-responsive2(src='/images/logo.png')
-  a.navbar-brand(href='/')
-    strong ZAWASH
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-    span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto
-      li.nav-item.active
-        a.nav-link(href='/')
-          | Home
-          span.sr-only (current)
-      li.nav-item
-        a.nav-link(href='/iventory') Iventory
-    .nav.navbar-nav.navbar-right
-      ul.nav.navbar-nav.navbar-right
-        li.nav-item
-          a.nav-link(href='/cartracking') CarTracking
-        li.nav-item
-          a.nav-link(href='/register/manager') AddManager
-        li.nav-item
-          a.nav-link(href='/register') Register 
-        li.nav-item
-          a.nav-link(href='/login') Login
-        li.nav-item
-          a.nav-link(href='/login/logout') Logout
-        
+extends layout1 
+block content 
+    link(rel="stylesheet", href="/iventory.css", type="text/css")
 
       
-center
-  if alert =='success' 
-    div.alert.alert-success Expense Cost added successfully
-  if alert =='error'
-    div.alert.alert-danger An error occured, failed to add information      
-  
-  form.iventory(name='contactForm' onsubmit='return validateForm()' action='iventory' method='post')
-    h2 Iventory Cost Form
-    .row
-      label
-      select(name='item')
-        option(value='' selected='' disabled='') --Select Item--
-        option Polish
-        option Powdered Detergents
-        option Electricity Units
-      #itemErr.error
-    .row
-      label
-      input(type='number' name='price' placeholder='Enter the Cost of Item')
-      #costErr.error
-    
-    .row
-      label
-      input#dateofbirth.form-control(type='text' name='currentdate' placeholder='Enter Current date' onclick="(this.type='Date')")
-      #dateErr.error
-    
-    .row
-      input(type='submit')
-br
-br
-br
-br
+    center
+      if alert =='success' 
+        div.alert.alert-success Expense Cost added successfully
+      if alert =='error'
+        div.alert.alert-danger An error occured, failed to add information      
+      
+      form.iventory(name='contactForm'  action='iventory' method='post' onsubmit='return validate();')
+        h2 Inventory Cost Form
+        .row
+          label
+          select(name='item' id='item')
+            option(value='' selected='' disabled='') --Select Item--
+            option Polish
+            option Powdered Detergents
+            option Electricity Units
+          #itemErr.error
+        .row
+          label
+          input#price(type='number' name='price' placeholder='Enter the Cost of Item')
+          #costErr.error
+        
+        .row
+          label
+          input#currentdate.form-control(type='text' name='currentdate' placeholder='Enter Current date' onclick="(this.type='Date')")
+          #dateErr.error
+        
+        .row
+          button.form-control.btn.btn-primary(type='submit')
+            | submit
+    br
+    br
+    br
+    br
 
-// footer Copyright message
-footer.bg-light.text-center.text-lg-start
-  .text-center.p-3(style='background-color: black;')
-    | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by Malinga Robert
-script(src='css/jquery-3.6.0.js')
-script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')
+    // footer Copyright message
+    footer.bg-light.text-center.text-lg-start
+      .text-center.p-3(style='background-color: black;')
+        | Copyright &copy; 2021 Zawash Car Bay.All rights reserved,Developed by Malinga Robert
+    script(src='css/jquery-3.6.0.js')
+    script(src='./ivent.js')
+    script(src='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.js')

@@ -28,7 +28,8 @@ router.post('/',async(req,res)=>{
         let package = washPackages[data.package]
         data.packagePrice = package['packagePrice']
         data.washerFee = package['washerFee']
-
+        
+        // saving captured car data
         const vehicle = new Vehicle(req.body);
         await vehicle.save()
         res.redirect('cartracking?alert=success')
@@ -38,17 +39,6 @@ router.post('/',async(req,res)=>{
         console.log(err)
     }
 })
-
-// router.post('/',(req,res)=>{
-//     console.log(req.body)
-//     const vehicle = new Vehicle(req.body);
-//     vehicle.save()
-//         .then(() => { res.send('Thank you for your registration!'); })
-//         .catch((err) => {
-//         console.log(err);
-//         res.send('Sorry! Something went wrong.');
-//         });
-        
-// });
-
 module.exports = router;
+
+

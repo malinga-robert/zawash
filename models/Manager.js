@@ -7,7 +7,7 @@ const managerSchema = new mongoose.Schema({
       trim: true,
       required: "Please provide fullnames",
     },
-    email: {
+    username: {
       type: String,
       required: "Please provide username",
       unique: true,
@@ -16,14 +16,14 @@ const managerSchema = new mongoose.Schema({
     phoneNumber: {
       type: String,
       trim: true,
-    },
-    password: {
-      type: String,
     }
+    // password: {
+    //   type: String,
+    // }
     
 })
     
-  // managerSchema.plugin(passportLocalMongoose);
+  managerSchema.plugin(passportLocalMongoose);
 
-  managerSchema.plugin(passportLocalMongoose,{usernameField: 'email'});
+  // managerSchema.plugin(passportLocalMongoose,{usernameField: 'email'});
   module.exports = mongoose.model('Manager', managerSchema);
